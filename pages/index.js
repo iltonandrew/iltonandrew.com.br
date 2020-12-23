@@ -10,7 +10,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Olá! Eu sou o Ilton!</h1>
+        <h1 className={styles.title} style={{ color: '#49D49D' }}>
+          Olá! Eu sou o Ilton!
+        </h1>
 
         <p className={styles.description}>
           Bem vindo à minha página!
