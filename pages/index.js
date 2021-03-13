@@ -23,12 +23,12 @@ export default function Home() {
             onInit={(typewriter) => {
               typewriter
 
-                .typeString('Eu sou um Engenheiro')
+                .typeString('Eu sou um Engenheiro.')
                 .pauseFor(1000)
-                .deleteChars(10)
-                .typeString('Desenvolvedor')
+                .deleteChars(11)
+                .typeString('Desenvolvedor.')
                 .pauseFor(1000)
-                .deleteChars(20)
+                .deleteChars(21)
                 .typeString('construo coisas para a web.')
                 .start();
             }}
