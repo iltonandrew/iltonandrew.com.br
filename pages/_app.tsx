@@ -1,3 +1,4 @@
+import '../styles/globals.css'
 import '@dracula/dracula-ui/styles/dracula-ui.css'
 import type { AppProps } from 'next/app'
 

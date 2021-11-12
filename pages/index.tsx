@@ -1,10 +1,11 @@
-import type { NextPage } from 'next'
-import { Paragraph } from '@dracula/dracula-ui'
+import type { NextPage } from 'next';
+import { Box, Text } from '@dracula/dracula-ui';
 
 const Home: NextPage = () => {
   return (
-    <Paragraph color="black">Hello Vampire</Paragraph>
-  )
-}
-
-export default Home
+    <div className='main drac-bg-black'>
+      <Text>Home</Text>
+    </div>
+  );
+};
+export default Home;
