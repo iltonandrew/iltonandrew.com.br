@@ -2,6 +2,9 @@ html,
 body {
   padding: 0;
   margin: 0;
+
+  /* height: 100%; */
+  /* width: 100%; */
 }
 
 a {
@@ -12,12 +15,25 @@ a {
 * {
   box-sizing: border-box;
 }
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+.layout {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-flow: column;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-grow: 1;
+  height: 100vh;
   align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+}
+.footer {
+  display: flex;
+  justify-content: center;
 }

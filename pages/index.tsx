@@ -1,10 +1,17 @@
 import type { NextPage } from 'next';
-import { Box, Text } from '@dracula/dracula-ui';
+import { Box, Heading } from '@dracula/dracula-ui';
 
 const Home: NextPage = () => {
   return (
-    <div className='main drac-bg-black'>
-      <Text>Home</Text>
+    <div className='container drac-bg-black'>
+      <Box
+        color='animated'
+        width='xs'
+        rounded='lg'
+        style={{ textAlign: 'center' }}
+      >
+        <Heading size='2xl'>Soon 👀</Heading>
+      </Box>
     </div>
   );
 };
