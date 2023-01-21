@@ -14,11 +14,7 @@ const overrides = {
   colors: { brand: { primary: "#f652a0", secondary: "#00ffff" } },
   fonts,
   styles: {
-    global: (props) => ({
-      // body: {
-      //   color: mode("pink.800", "blue.900")(props),
-      //   bg: mode("pink.100", "#141214")(props),
-      // },
+    global: () => ({
       ".mdx-prose": {
         h1: {
           fontSize: "xl",
