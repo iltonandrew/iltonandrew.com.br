@@ -14,6 +14,7 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  Img,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -21,7 +22,6 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import Image from "next/image";
 import { ToggleColorMode } from "./ToggleColorMode";
 
 export default function WithSubnavigation() {
@@ -54,14 +54,12 @@ export default function WithSubnavigation() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Image
-            src={"/../public/fullname.png"}
-            width={100}
-            height={100}
-            alt="Logo"
-          />
-
+        <Flex
+          flex={{ base: 1 }}
+          justify={{ base: "center", md: "start" }}
+          align={{ base: "center" }}
+        >
+          <Img src={"/fullname.png"} height={10} alt="Logo" />
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
@@ -98,7 +96,7 @@ export default function WithSubnavigation() {
 
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
+  // const linkHoverColor = useColorModeValue("brand.primary", "brand.primary");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
@@ -110,12 +108,12 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 href={navItem.href ?? "#"}
-                fontSize={"sm"}
+                fontSize={"xl"}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
                   textDecoration: "none",
-                  color: linkHoverColor,
+                  color: "brand.primary",
                 }}
               >
                 {navItem.label}
