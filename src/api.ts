@@ -19,12 +19,7 @@ export const getAllPosts = (locale: string) => {
 };
 
 export const getPostBySlug = (slug: string, locale: string): Post => {
-  const postPath = path.join(
-    process.cwd(),
-    "posts",
-    locale ?? "pt-BR",
-    `${slug}.mdx`
-  );
+  const postPath = path.join(process.cwd(), "posts", locale, `${slug}.mdx`);
   const source = fs.readFileSync(postPath);
   const { content, data } = matter(source);
   return {
