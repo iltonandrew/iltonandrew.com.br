@@ -12,7 +12,11 @@ import Typewriter from "typewriter-effect";
 
 export default function Hero() {
   return (
-    <Stack direction={{ base: "column", md: "row" }} height={"100vh"} p={16}>
+    <Stack
+      direction={{ base: "column", md: "row" }}
+      height={useBreakpointValue({ base: "auto", md: "100vh" })}
+      p={16}
+    >
       <Flex p={8} flex={1} align={"center"} justify={"center"}>
         <Stack spacing={6} w={"full"} maxW={"lg"}>
           <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>

@@ -32,13 +32,14 @@ export default function WithSubnavigation() {
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
-        minH={"60px"}
+        maxH={"100px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
+        justify={"space-between"}
       >
         <Flex
           flex={{ base: 1, md: "auto" }}
@@ -59,7 +60,12 @@ export default function WithSubnavigation() {
           justify={{ base: "center", md: "start" }}
           align={{ base: "center" }}
         >
-          <Img src={"/fullname.png"} height={10} alt="Logo" />
+          <Img
+            boxSize="150px"
+            src={"/fullname.svg"}
+            paddingRight={4}
+            alt="Logo"
+          />
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
