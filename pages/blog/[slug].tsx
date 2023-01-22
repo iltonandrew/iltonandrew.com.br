@@ -36,7 +36,6 @@ export default function BlogPost({ post }: { post: MDXPost }) {
 
 export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   const { slug } = params as { slug: string };
-  console.log(locale);
   const { content, meta } = getPostBySlug(slug, locale ?? "pt-BR");
   const mdxSource = await serialize(content, {
     mdxOptions: {
