@@ -24,8 +24,11 @@ import {
 } from "@chakra-ui/icons";
 import { ToggleColorMode } from "./ToggleColorMode";
 
+import { useRouter } from "next/router";
+
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+  const router = useRouter();
 
   return (
     <Box>
@@ -87,8 +90,10 @@ export default function WithSubnavigation() {
             _hover={{
               bg: "pink.300",
             }}
+            as="a"
+            href={router.pathname === "/blog" ? "/" : "/blog"}
           >
-            Blog
+            {router.pathname === "/blog" ? "Home" : "Blog"}
           </Button>
         </Stack>
       </Flex>
