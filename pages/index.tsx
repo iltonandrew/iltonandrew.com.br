@@ -15,7 +15,6 @@ const Home: NextPage = () => {
       <Hero />
       <Divider />
       <Companies />
-      <Footer />
     </>
   );
 };
