@@ -13,4 +13,5 @@ export interface PostMeta {
   tags: string[];
   date: string;
   summary: string;
+  image: string;
 }

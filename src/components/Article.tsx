@@ -37,32 +37,38 @@ export default function Article(props: { post: PostMeta; key: string }) {
       display="flex"
       flexDirection={{ base: "column", sm: "row" }}
       justifyContent="space-between"
+      height={{ base: "200px", sm: "200px" }}
+      width="100%"
     >
       <Box
         display="flex"
         flex="1"
         marginRight="3"
         position="relative"
-        alignItems="center"
+        // alignItems="center"
+        maxW={{ base: "100%", sm: "25%" }}
       >
         <Box
+          display={"flex"}
           width={{ base: "100%", sm: "85%" }}
           zIndex="2"
-          marginLeft={{ base: "0", sm: "5%" }}
-          marginTop="5%"
+          marginLeft={{ base: "0", sm: "8%" }}
+          // marginTop="5%"
+          alignItems="center"
+          justifyContent="center"
         >
           <Link
             textDecoration="none"
             _hover={{ textDecoration: "none" }}
-            href={props.post.slug}
+            href={`/blog/${props.post.slug}`}
           >
             <Image
               borderRadius="lg"
-              src={
-                "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80"
-              }
+              src={props.post.image}
               alt="some good alt text"
-              objectFit="contain"
+              maxH={"100%"}
+              maxW={"100%"}
+              p={2}
             />
           </Link>
         </Box>

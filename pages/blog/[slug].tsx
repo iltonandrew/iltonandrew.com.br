@@ -9,6 +9,7 @@ import Head from "next/head";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
+import { Container, Heading, Divider } from "@chakra-ui/layout";
 
 interface MDXPost {
   meta: PostMeta;
@@ -24,12 +25,10 @@ export default function BlogPost({ post }: { post: MDXPost }) {
       <Head>
         <title>{post.meta.title}</title>
       </Head>
-      <div>
-        <h1>{post.meta.title}</h1>
-        <div className="mdx-prose">
-          <MDXRemote {...post.source} components={{ Image, YouTube }} />
-        </div>
-      </div>
+      <Container maxW={"8xl"} p="8">
+        <Heading mb={8}>{post.meta.title}</Heading>
+        <MDXRemote {...post.source} components={{ Image, YouTube }} />
+      </Container>
     </>
   );
 }
