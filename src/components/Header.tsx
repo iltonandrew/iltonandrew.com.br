@@ -63,12 +63,14 @@ export default function WithSubnavigation() {
           justify={{ base: "center", md: "start" }}
           align={{ base: "center" }}
         >
-          <Img
-            boxSize="150px"
-            src={"/fullname.svg"}
-            paddingRight={4}
-            alt="Logo"
-          />
+          <Link href={"/"}>
+            <Img
+              boxSize="150px"
+              src={"/fullname.svg"}
+              paddingRight={4}
+              alt="Logo"
+            />
+          </Link>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>

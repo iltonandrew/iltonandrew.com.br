@@ -10,7 +10,7 @@ export default function Blog({ posts }: { posts: PostMeta[] }) {
       <Head>
         <title>Blog</title>
       </Head>
-      <Container maxW={"7xl"} p="12">
+      <Container maxW={"7xl"} p="12" minH={"100vh"}>
         <Heading as="h1">Meus Posts</Heading>
         {posts.map((post) => (
           <>
