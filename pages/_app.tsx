@@ -5,6 +5,7 @@ import { theme } from "../styles/theme";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Header />
       <Component {...pageProps} />
       <Footer />
+      <Analytics />
     </ChakraProvider>
   );
 }
