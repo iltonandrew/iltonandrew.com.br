@@ -1,20 +1,21 @@
+"use client";
+
 import { getAllPosts } from "../../src/api";
+import { Container, Heading, Divider } from "@chakra-ui/layout";
 import { ContextType, PostMeta } from "@/types";
-import Link from "next/link";
+import Article from "@/components/Article";
 
 export default function Blog({ posts }: { posts: PostMeta[] }) {
   return (
-    <div>
-      <h1>Blog</h1>
-      <p>Blog page</p>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Container maxW={"7xl"} p="12">
+      <Heading as="h1">Meus Posts</Heading>
+      {posts.map((post) => (
+        <>
+          <Article post={post} key={post.slug} />
+          <Divider marginTop="5" key={post.slug} />
+        </>
+      ))}
+    </Container>
   );
 }
 
