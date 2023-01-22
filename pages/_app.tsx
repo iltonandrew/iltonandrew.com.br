@@ -10,13 +10,6 @@ import { Analytics } from "@vercel/analytics/react";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Head>
-        <meta property="og:title" content="Ilton Andrew" />
-        <meta property="og:description" content="Portifólio & Blog" />
-        <meta property="og:image" content="/images/profile_photo.jpg" />
-        <meta property="og:url" content="https://iltonandrew.com.br" />
-        <meta property="og:type" content="website" />
-      </Head>
       <Header />
       <Component {...pageProps} />
       <Footer />
