@@ -28,6 +28,13 @@ const Home: NextPage = () => {
               alt: "Ilton Andrew",
               type: "image/jpeg",
             },
+            {
+              url: "https://iltonandrew.com.br/images/profile_photo.jpg",
+              width: 300,
+              height: 200,
+              alt: "Ilton Andrew",
+              type: "image/jpeg",
+            },
           ],
         }}
       />
