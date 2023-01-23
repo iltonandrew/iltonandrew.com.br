@@ -10,23 +10,11 @@ const overrides = {
   config: {
     initialColorMode: "dark",
     useSystemColorMode: false,
+    disableTransitionOnChange: true,
   },
   colors: { brand: { primary: "#f652a0", secondary: "#00ffff" } },
   fonts,
-  styles: {
-    global: () => ({
-      ".mdx-prose": {
-        h1: {
-          fontSize: "xl",
-          mb: "50",
-        },
-        p: {
-          fontSize: "sm",
-          lineHeight: "1.4",
-        },
-      },
-    }),
-  },
+  styles: {},
 };
 
 export const theme = extendTheme(overrides);
