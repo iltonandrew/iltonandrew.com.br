@@ -25,7 +25,7 @@ export default function BlogPost({ post }: { post: MDXPost }) {
       <Head>
         <title>{post.meta.title}</title>
       </Head>
-      <Container maxW={"8xl"} p="8">
+      <Container maxW={"8xl"} minH="83vh" p="8">
         <Heading mb={8}>{post.meta.title}</Heading>
         <MDXRemote {...post.source} components={{ Image, YouTube }} />
       </Container>
