@@ -2,8 +2,7 @@ import type { NextPage } from "next";
 import { ToggleColorMode } from "../src/components/ToggleColorMode";
 import Head from "next/head";
 import Hero from "../src/components/Hero";
-import Companies from "@/components/CompaniesList";
-import Footer from "@/components/Footer";
+import Companies from "@/components/Companies";
 import { Divider } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 

@@ -7,6 +7,7 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 import Typewriter from "typewriter-effect";
 
@@ -63,23 +64,27 @@ export default function Hero() {
             no mundo da Engenharia de Software.
           </Text>
           <Stack direction={{ base: "column", md: "row" }} spacing={4}>
-            <Button
-              rounded={"full"}
-              bg={"brand.primary"}
-              color={"white"}
-              _hover={{
-                bg: "brand.secondary",
-              }}
-            >
-              Projetos
-            </Button>
-            <Button rounded={"full"}>Entre em contato</Button>
+            <Link href="#work" scroll={false}>
+              <Button
+                rounded={"full"}
+                bg={"brand.primary"}
+                color={"white"}
+                _hover={{
+                  bg: "brand.secondary",
+                }}
+              >
+                Onde trabalhei
+              </Button>
+            </Link>
+
+            <Link href="mailto:iltonandrew+contato@gmail.com">
+              <Button rounded={"full"}>Entre em contato</Button>
+            </Link>
           </Stack>
         </Stack>
       </Flex>
       <Flex flex={1} align={"center"} justify={"center"}>
         <Img
-          // boxSize={"50%"}
           borderRadius={"full"}
           objectFit={"cover"}
           alt={"My photo"}

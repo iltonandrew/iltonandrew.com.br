@@ -5,7 +5,7 @@ import { theme } from "../styles/theme";
 
 export default function Document() {
   return (
-    <Html>
+    <Html style={{ scrollBehavior: "smooth" }}>
       <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
       <Head />
       <body>
