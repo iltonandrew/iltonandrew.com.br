@@ -4,12 +4,12 @@ import { getPostBySlug, getSlugs } from "@/api";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { PostMeta } from "@/types";
-import YouTube from "@/components/youtube";
 import Head from "next/head";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
-import { Container, Heading, Divider } from "@chakra-ui/layout";
+import { Container, Heading } from "@chakra-ui/react";
+import { MDXComponents } from "@/components/MDXComponents";
 
 interface MDXPost {
   meta: PostMeta;
@@ -27,7 +27,7 @@ export default function BlogPost({ post }: { post: MDXPost }) {
       </Head>
       <Container maxW={"8xl"} minH="83vh" p="8">
         <Heading mb={8}>{post.meta.title}</Heading>
-        <MDXRemote {...post.source} components={{ Image, YouTube }} />
+        <MDXRemote {...post.source} components={{ ...MDXComponents, Image }} />
       </Container>
     </>
   );
