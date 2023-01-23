@@ -110,7 +110,7 @@ export default function WithSubnavigation() {
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
   // const linkHoverColor = useColorModeValue("brand.primary", "brand.primary");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  const popoverContentBgColor = useColorModeValue("white", "gray.900");
 
   return (
     <Stack direction={"row"} spacing={4}>
@@ -138,6 +138,7 @@ const DesktopNav = () => {
                 border={0}
                 boxShadow={"xl"}
                 bg={popoverContentBgColor}
+                shadow={"xl"}
                 p={4}
                 rounded={"xl"}
                 minW={"sm"}
@@ -270,37 +271,34 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Quem sou",
+    // children: [
+    //   {
+    //     label: "Explore Design Work",
+    //     subLabel: "Trending Design to inspire you",
+    //     href: "#",
+    //   },
+    //   {
+    //     label: "New & Noteworthy",
+    //     subLabel: "Up-and-coming Designers",
+    //     href: "#",
+    //   },
+    // ],
+  },
+  {
+    label: "O que fiz até agora",
+    href: "#work",
     children: [
       {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
+        label: "Onde trabalhei",
+        subLabel: "Empresas que já impactei",
+        href: "#work",
       },
       {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
+        label: "Projetos",
+        subLabel: "O que já desenvolvi",
         href: "#",
       },
     ],
-  },
-  {
-    label: "Onde estive",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Meus Projetos",
-    href: "#",
   },
   {
     label: "Entre em contato",

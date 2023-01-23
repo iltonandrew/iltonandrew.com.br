@@ -15,7 +15,7 @@ export default function Blog({ posts }: { posts: PostMeta[] }) {
         {posts.map((post) => (
           <>
             <Article post={post} key={post.slug} />
-            <Divider marginTop="5" key={post.slug} />
+            <Divider marginTop="5" />
           </>
         ))}
       </Container>
