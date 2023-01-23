@@ -286,17 +286,16 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: "O que fiz até agora",
-    href: "#work",
+    href: "/#work",
     children: [
       {
         label: "Onde trabalhei",
         subLabel: "Empresas que já impactei",
-        href: "#work",
+        href: "/#work",
       },
       {
         label: "Projetos",
         subLabel: "O que já desenvolvi",
-        href: "#",
       },
     ],
   },
