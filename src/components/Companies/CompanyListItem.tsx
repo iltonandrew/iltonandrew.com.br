@@ -1,4 +1,8 @@
-import { Divider, Stack, Text, Img } from "@chakra-ui/react";
+import { Stack, Text, Img, keyframes } from "@chakra-ui/react";
+
+import { useState, useRef, useEffect } from "react";
+
+import { useIntersectionObserver } from "@/hooks";
 
 type CompanyProps = {
   name: string;
@@ -17,9 +21,32 @@ export default function Company({
   description,
   stack,
 }: CompanyProps) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(ref, {});
+  const isVisible = !!entry?.isIntersecting;
+
+  const animationKeyframes = keyframes`
+  0% {transform: translateX(-50%); opacity: 0; }
+  100% { transform: translateX(0%); opacity: 100%;}
+  `;
+  const animation = `${animationKeyframes} 600ms ease-in-out`;
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
+  useEffect(() => {
+    if (isVisible) {
+      setTimeout(() => {
+        setHasBeenVisible(true);
+      }, 800);
+    }
+  }, [isVisible]);
+
   return (
     <>
-      <Stack direction="row" p={8}>
+      <Stack
+        ref={ref}
+        animation={isVisible && !hasBeenVisible ? animation : undefined}
+        direction="row"
+        p={8}
+      >
         <Img src={`"../../images/companies/${image}`} alt={name} maxH="75px" />
         <Stack direction="column" pl={4}>
           <Text fontWeight={"bold"} fontSize="xl" marginBottom={"-2"}>
