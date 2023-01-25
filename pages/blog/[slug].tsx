@@ -8,8 +8,10 @@ import Head from "next/head";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
-import { Container, Heading } from "@chakra-ui/react";
+import { Container, Heading, Button } from "@chakra-ui/react";
 import { MDXComponents } from "@/components/MDXComponents";
+import Link from "next/link";
+import { ArrowBackIcon } from "@chakra-ui/icons";
 
 interface MDXPost {
   meta: PostMeta;
@@ -25,7 +27,20 @@ export default function BlogPost({ post }: { post: MDXPost }) {
       <Head>
         <title>{post.meta.title}</title>
       </Head>
-      <Container maxW={"8xl"} minH="83vh" p="8">
+      <Container maxW={"8xl"} minH="80vh" p="8">
+        <Link href="/blog">
+          <Button
+            padding="none"
+            variant="ghost"
+            color="brand.primary"
+            leftIcon={<ArrowBackIcon />}
+            _hover={{ color: "brand.secondary" }}
+            ml={-4}
+            mb={4}
+          >
+            Voltar
+          </Button>
+        </Link>
         <Heading mb={8}>{post.meta.title}</Heading>
         <MDXRemote {...post.source} components={{ ...MDXComponents, Image }} />
       </Container>
