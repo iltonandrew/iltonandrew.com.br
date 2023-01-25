@@ -17,6 +17,7 @@ export default function Hero() {
       direction={{ base: "column", md: "row" }}
       height={useBreakpointValue({ base: "auto", md: "100vh" })}
       p={16}
+      id="#about"
     >
       <Flex p={8} flex={1} align={"center"} justify={"center"}>
         <Stack spacing={6} w={"full"} maxW={"lg"}>
