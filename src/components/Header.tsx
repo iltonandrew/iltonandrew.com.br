@@ -12,7 +12,6 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
   Img,
 } from "@chakra-ui/react";
@@ -84,7 +83,7 @@ export default function WithSubnavigation() {
         >
           <ToggleColorMode />
           <Button
-            display={{ md: "inline-flex" }}
+            textAlign={"center"}
             fontSize={"sm"}
             fontWeight={600}
             color={"white"}
@@ -271,6 +270,7 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Quem sou",
+    href: "/#about",
     // children: [
     //   {
     //     label: "Explore Design Work",
