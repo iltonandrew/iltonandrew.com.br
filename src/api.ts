@@ -13,7 +13,9 @@ export const getSlugs = (locale: string) => {
 export const getAllPosts = (locale: string) => {
   const posts = getSlugs(locale)
     .map((slug) => getPostBySlug(slug, locale))
-    .sort((post1, post2) => (post1.meta.date > post2.meta.date ? -1 : 1));
+    .sort((post1, post2) =>
+      new Date(post2.meta.date).getTime() - new Date(post1.meta.date).getTime()
+    );
 
   return posts;
 };
@@ -28,8 +30,8 @@ export const getPostBySlug = (slug: string, locale: string): Post => {
       summary: data.summary ?? "",
       slug,
       title: data.title ?? slug,
-      tags: data.tags.sort() ?? [],
-      date: (data.date ?? new Date()).toString(),
+      tags: Array.isArray(data.tags) ? [...data.tags].sort() : [],
+      date: new Date(data.date ?? Date.now()).toISOString(),
       image: data.image ?? "",
     },
   };
