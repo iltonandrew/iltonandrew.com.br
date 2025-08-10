@@ -47,7 +47,7 @@ export default function Company({
         direction="row"
         p={8}
       >
-        <Img src={`"../../images/companies/${image}`} alt={name} maxH="75px" />
+        <Img src={`/images/companies/${image}`} alt={name} maxH="75px" />
         <Stack direction="column" pl={4}>
           <Text fontWeight={"bold"} fontSize="xl" marginBottom={"-2"}>
             {name}
