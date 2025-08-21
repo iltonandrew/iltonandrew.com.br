@@ -5,6 +5,7 @@ import Hero from "../src/components/Hero";
 import Companies from "@/components/Companies";
 import { Divider } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
+import Projects from "@/components/Projects";
 
 const Home: NextPage = () => {
   return (
@@ -40,6 +41,8 @@ const Home: NextPage = () => {
       <Hero />
       <Divider />
       <Companies />
+      <Divider />
+      <Projects />
     </>
   );
 };

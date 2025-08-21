@@ -10,14 +10,17 @@ import {
 import Link from "next/link";
 
 import Typewriter from "typewriter-effect";
+import useTranslation from "next-translate/useTranslation";
 
 export default function Hero() {
+  const { t, lang } = useTranslation("common");
+  const phrases = (t("hero.typewriter", {}, { returnObjects: true }) as string[]) || [];
   return (
     <Stack
       direction={{ base: "column", md: "row" }}
       height={useBreakpointValue({ base: "auto", md: "100vh" })}
       p={16}
-      id="#about"
+      id="about"
     >
       <Flex p={8} flex={1} align={"center"} justify={"center"}>
         <Stack spacing={6} w={"full"} maxW={"lg"}>
@@ -36,33 +39,23 @@ export default function Hero() {
                 zIndex: -1,
               }}
             >
-              Ilton Andrew
+              {t("hero.name")}
             </Text>
             <br />{" "}
             <Text color={"brand.primary"} as={"span"}>
               <Typewriter
                 options={{
                   cursor: "_",
-                }}
-                onInit={(typewriter) => {
-                  typewriter
-
-                    .typeString("Eu sou um Engenheiro.")
-                    .pauseFor(1000)
-                    .deleteChars(11)
-                    .typeString("Desenvolvedor.")
-                    .pauseFor(1000)
-                    .deleteChars(21)
-                    .typeString("construo coisas para a web.")
-                    .start();
+                  loop: true,
+                  delay: 40,
+                  deleteSpeed: 20,
+                  strings: phrases,
                 }}
               />
             </Text>{" "}
           </Heading>
           <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
-            Formado em Engenharia Elétrica e de Computação pela Escola
-            Politécnica da Universidade de São Paulo, atualmente se aventurando
-            no mundo da Engenharia de Software.
+            {t("hero.description")}
           </Text>
           <Stack direction={{ base: "column", md: "row" }} spacing={4}>
             <Link href="#work" scroll={false}>
@@ -74,12 +67,12 @@ export default function Hero() {
                   bg: "brand.secondary",
                 }}
               >
-                Onde trabalhei
+                {t("hero.buttons.work")}
               </Button>
             </Link>
 
             <Link href="mailto:iltonandrew+contato@gmail.com">
-              <Button rounded={"full"}>Entre em contato</Button>
+              <Button rounded={"full"}>{t("hero.buttons.contact")}</Button>
             </Link>
           </Stack>
         </Stack>

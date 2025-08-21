@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" role="img" aria-label="Media Hero">
+  <defs>
+    <linearGradient id="gh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff00aa"/>
+      <stop offset="100%" stop-color="#00e5ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="40" rx="8" fill="#0b0b12"/>
+  <g transform="translate(12,28)" fill="url(#gh)">
+    <path d="M0-18h6l6 10 6-10h6V0h-6v-12l-6 10-6-10V0H0z"/>
+    <path d="M48-18h18v6H54v3h10v6H54V0h-6z"/>
+    <path d="M86-18h6v12h10V0H86z"/>
+    <path d="M112-18h6l4 6 4-6h6v18h-6v-9l-4 6-4-6V0h-6z"/>
+  </g>
+</svg>

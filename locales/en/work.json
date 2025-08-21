@@ -1,0 +1,54 @@
+{
+  "heading": "Work Experience",
+  "workedWith": "Worked with",
+  "items": [
+    {
+      "name": "Media Hero",
+      "role": "Head of Software Engineering",
+      "data": "February, 2023 - Present",
+      "image": "media-hero.svg",
+      "description": "Built a new data integration and visualization platform from scratch using Next.js with tRPC, designing the architecture and Terraform-based IaC to automate DevOps processes and improve pipeline reliability. Partnered closely with Product to shape the platform and elevate UX.",
+      "stack": "Next.js, tRPC, Terraform, AWS, PostgreSQL"
+    },
+    {
+      "name": "XP Inc.",
+      "role": "Treasury Software Engineer",
+      "data": "August, 2022 - February, 2023",
+      "image": "xp.png",
+      "description": "Developed tools to improve workflow and process reliability and centralized data across databases and systems. Led a real-time financial data web project, iterating quickly with analysts to prioritize features that boosted productivity and decision-making.",
+      "stack": "Python, Go, SQL, Next.js"
+    },
+    {
+      "name": "Pipefy",
+      "role": "Jr. Software Engineer",
+      "data": "January, 2021 - July, 2022",
+      "image": "pipefy.png",
+      "description": "Member of the Young Guns Tech rotational program. Shipped features like Share Inbox, Form Hub, and Guest Portal. In PLG, increased conversion through UX and FTUE improvements, running multiple A/B tests with Design.",
+      "stack": "TypeScript, React, GraphQL, Ruby on Rails, Elixir"
+    },
+    {
+      "name": "XP Inc.",
+      "role": "Summer Intern",
+      "data": "December, 2019 - February, 2020",
+      "image": "xp.png",
+      "description": "Developed a Django portal for fund performance tracking, Power BI dashboards integrated with the portal, and automations to improve team efficiency. Also supported platform updates and testing.",
+      "stack": "Python, Django, Power BI, SQL"
+    },
+    {
+      "name": "Amigos da Poli",
+      "role": "Tech Volunteer",
+      "data": "September, 2019 - December, 2020",
+      "image": "adp.jpg",
+      "description": "Built the 2020 Project Notice site (Angular) and a new brand website with a CMS (React/Gatsby). Boosted donations and conversion; created a real-time gamified donations dashboard for Giving Month to elevate engagement.",
+      "stack": "Angular, React, Gatsby"
+    },
+    {
+      "name": "Poli Júnior",
+      "role": "Software Engineer",
+      "data": "November, 2018 - January, 2021",
+      "image": "poli-junior.png",
+      "description": "Developed custom apps with Django, React, React Native, and Node.js. Taught React/React Native/Node and Software Architecture to raise delivery quality. Co-organized Latin America's largest recruitment fair, building a Django information system and a WhatsApp chatbot to improve conversion and event flow.",
+      "stack": "Python, Django, Node.js, React, React Native"
+    }
+  ]
+}
