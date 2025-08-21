@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "about": "Quem sou",
+    "work": "O que fiz até agora",
+    "whereWorked": "Onde trabalhei",
+    "whereWorkedSub": "Empresas que já impactei",
+    "projects": "Projetos",
+    "projectsSub": "O que já desenvolvi",
+    "contact": "Entre em contato",
+    "home": "Início",
+    "blog": "Blog",
+    "language": "Idioma"
+  },
+  "hero": {
+    "subtitle": "Formado em Engenharia Elétrica e de Computação pela Escola Politécnica da Universidade de São Paulo, atualmente focado em Engenharia de Software.",
+    "ctaWork": "Onde trabalhei",
+    "ctaContact": "Entre em contato",
+    "ctaConverter": "Abrir Converter (projeto paralelo)",
+    "type": {
+      "engineer": "Eu sou um Engenheiro.",
+      "developer": "Desenvolvedor.",
+      "buildWeb": "construo coisas para a web."
+    }
+  },
+  "companies": {
+    "title": "Minha Experiência Profissional",
+    "workedWith": "Trabalhei com",
+    "mediaHero": {
+      "name": "Media Hero",
+      "role": "Head de Engenharia de Software",
+      "date": "Fevereiro, 2023 — Atual",
+      "description": "Criei do zero uma plataforma de integração e visualização de dados usando Next.js e tRPC, definindo a arquitetura e a infraestrutura com Terraform para automatizar processos de DevOps e aumentar a confiabilidade dos pipelines. Atuei em parceria com o time de Produto para desenhar a plataforma, garantindo aderência à visão do produto e elevando a experiência do usuário.",
+      "stack": "Next.js, tRPC, Terraform, AWS, DevOps"
+    },
+    "xp_treasury": {
+      "name": "XP Inc.",
+      "role": "Engenheiro de Software - Tesouraria",
+      "date": "Agosto, 2022 — Fevereiro, 2023",
+      "description": "Desenvolvi ferramentas para otimizar o fluxo de trabalho e a confiabilidade de processos na tesouraria, além de conduzir a centralização de dados em múltiplas bases e sistemas. Participei de um projeto web para exibir dados financeiros em tempo real, coletando feedback contínuo de analistas para priorizar funcionalidades que aumentaram produtividade e assertividade.",
+      "stack": "Python, Go, SQL, React"
+    },
+    "pipefy": {
+      "name": "Pipefy",
+      "role": "Jr. Software Engineer",
+      "date": "Janeiro, 2021 — Julho, 2022",
+      "description": "Fiz parte do programa Young Guns Tech, circulando por diferentes áreas para conhecer o produto e seus clientes. Entreguei funcionalidades como Share Inbox, Form Hub e Guest Portal. No time de Product-led Growth, trabalhei com Design para rodar testes A/B que melhoraram a FTUE e a conversão.",
+      "stack": "TypeScript, React, Next.js, GraphQL, Ruby on Rails, Elixir"
+    },
+    "xp_intern": {
+      "name": "XP Inc.",
+      "role": "Back Office Summer Intern",
+      "date": "Dezembro, 2019 — Fevereiro, 2020",
+      "description": "Desenvolvi um portal em Django para acompanhamento de performance de fundos, criei dashboards em Power BI integradas ao portal e implementei automações para melhorar o dia a dia do time. Também apoiei a gestão e os testes de atualizações de plataformas da área.",
+      "stack": "Python, Django, Power BI, SQL"
+    },
+    "adp": {
+      "name": "Amigos da Poli",
+      "role": "Tech Volunteer",
+      "date": "Setembro, 2019 — Dezembro, 2020",
+      "description": "Desenvolvi o site do Edital de Projetos de 2020 (Angular) e o novo site da marca com CMS (React/Gatsby). O novo site foi essencial para aumentar a conversão e as doações. Para o Mês de Doar, construí um dashboard em tempo real com gamificação que aumentou o engajamento dos doadores.",
+      "stack": "Angular, React, Gatsby"
+    },
+    "poli": {
+      "name": "Poli Junior",
+      "role": "Software Engineer",
+      "date": "Novembro, 2018 — Janeiro, 2021",
+      "description": "Desenvolvi aplicações sob medida para diversos clientes com Django, React, React Native e Node.js. Introduzi e ensinei React, React Native e Node.js, além de noções de arquitetura de software para elevar a qualidade dos projetos. Co-organizei a maior feira de recrutamento da América Latina e desenvolvi sistemas de apoio, incluindo um chatbot de WhatsApp para melhorar conversão e fluxo do evento.",
+      "stack": "Python, Django, Node.js, React, React Native"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "myPosts": "Meus Posts",
+    "back": "Voltar"
+  },
+  "resume": {
+    "download": "Baixar Currículo",
+    "englishVersion": "Versão em inglês",
+    "portugueseVersion": "Versão em português"
+  }
+}
+

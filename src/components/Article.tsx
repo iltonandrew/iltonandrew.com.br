@@ -2,7 +2,7 @@ import React from "react";
 import {
   Box,
   Heading,
-  Link,
+  Link as ChakraLink,
   Image,
   Text,
   Divider,
@@ -11,6 +11,7 @@ import {
   SpaceProps,
   useColorModeValue,
 } from "@chakra-ui/react";
+import Link from "next/link";
 interface IBlogTags {
   tags: Array<string>;
   marginTop?: SpaceProps["marginTop"];
@@ -57,19 +58,17 @@ export default function Article(props: { post: PostMeta; key: string }) {
           alignItems="center"
           justifyContent="center"
         >
-          <Link
-            textDecoration="none"
-            _hover={{ textDecoration: "none" }}
-            href={`/blog/${props.post.slug}`}
-          >
-            <Image
-              borderRadius="lg"
-              src={props.post.image}
-              alt="some good alt text"
-              maxH={"100%"}
-              maxW={"100%"}
-              p={2}
-            />
+          <Link href={`/blog/${props.post.slug}`} passHref>
+            <ChakraLink textDecoration="none" _hover={{ textDecoration: "none" }}>
+              <Image
+                borderRadius="lg"
+                src={props.post.image}
+                alt="some good alt text"
+                maxH={"100%"}
+                maxW={"100%"}
+                p={2}
+              />
+            </ChakraLink>
           </Link>
         </Box>
         <Box zIndex="1" width="100%" position="absolute" height="100%">
@@ -90,8 +89,10 @@ export default function Article(props: { post: PostMeta; key: string }) {
       >
         <BlogTags tags={props.post.tags} />
         <Heading marginTop="1">
-          <Link textDecoration="none" _hover={{ textDecoration: "none" }}>
-            {props.post.title}
+          <Link href={`/blog/${props.post.slug}`} passHref>
+            <ChakraLink textDecoration="none" _hover={{ textDecoration: "none" }}>
+              {props.post.title}
+            </ChakraLink>
           </Link>
         </Heading>
         <Text
