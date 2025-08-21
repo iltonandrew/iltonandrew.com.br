@@ -6,7 +6,6 @@ import { theme } from "../styles/theme";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
-import appWithTranslation from "next-translate/appWithTranslation";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -19,4 +18,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default appWithTranslation(MyApp);
+export default MyApp;
