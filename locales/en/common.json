@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "about": "About",
+    "work": "Work",
+    "whereWorked": "Where I've worked",
+    "whereWorkedSublabel": "Companies I've impacted",
+    "projects": "Projects",
+    "projectsSublabel": "Things I've built",
+    "contact": "Get in touch"
+  },
+  "hero": {
+    "name": "Ilton Andrew",
+    "description": "Electrical and Computer Engineering graduate from POLI-USP, now thriving in Software Engineering.",
+    "typewriter": [
+      "I'm an Engineer.",
+      "A Developer.",
+      "I build for the web."
+    ],
+    "buttons": {
+      "work": "Where I've worked",
+      "contact": "Get in touch"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "heading": "My Posts",
+    "back": "Back"
+  },
+  "resume": {
+    "download": "Download Resume",
+    "englishVersion": "English version"
+  },
+  "footer": {
+    "copyright": "© 2025 Ilton Andrew. All rights reserved."
+  }
+}

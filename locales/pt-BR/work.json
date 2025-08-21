@@ -1,0 +1,54 @@
+{
+  "heading": "Minha Experiência Profissional",
+  "workedWith": "Trabalhei com",
+  "items": [
+    {
+      "name": "Media Hero",
+      "role": "Head de Engenharia de Software",
+      "data": "Fevereiro, 2023 - Atual",
+      "image": "media-hero.svg",
+      "description": "Liderei a criação de uma nova plataforma de integração e visualização de dados do zero, usando Next.js e tRPC, arquitetando o projeto e infraestrutura com Terraform para automatizar processos de DevOps e aumentar a confiabilidade dos pipelines. Atuei com o time de Produto no design da plataforma, garantindo a visão do produto e aprimorando a experiência do usuário.",
+      "stack": "Next.js, tRPC, Terraform, AWS, PostgreSQL"
+    },
+    {
+      "name": "XP Inc.",
+      "role": "Treasury Software Engineer",
+      "data": "Agosto, 2022 - Fevereiro, 2023",
+      "image": "xp.png",
+      "description": "Desenvolvi ferramentas para melhorar o fluxo e a confiabilidade de processos e a centralização de dados entre bases e sistemas. Contribuí para um projeto web com dados financeiros em tempo real, coletando feedback contínuo de analistas e priorizando funcionalidades que aumentaram produtividade e assertividade.",
+      "stack": "Python, Go, SQL, Next.js"
+    },
+    {
+      "name": "Pipefy",
+      "role": "Jr. Software Engineer",
+      "data": "Janeiro, 2021 - Julho, 2022",
+      "image": "pipefy.png",
+      "description": "Parte do programa Young Guns Tech, com rotações entre áreas para conhecer o produto e clientes. Entreguei features como Share Inbox, Form Hub e Guest Portal. No time PLG, aumentei conversão via melhorias de usabilidade e FTUE, executando A/B tests em parceria com Design.",
+      "stack": "TypeScript, React, GraphQL, Ruby on Rails, Elixir"
+    },
+    {
+      "name": "XP Inc.",
+      "role": "Summer Intern",
+      "data": "Dezembro, 2019 - Fevereiro, 2020",
+      "image": "xp.png",
+      "description": "Criei um portal em Django para acompanhar performance de fundos, dashboards em Power BI integrados ao portal e automações para ganho de eficiência. Também participei da gestão e testes de atualizações de plataformas.",
+      "stack": "Python, Django, Power BI, SQL"
+    },
+    {
+      "name": "Amigos da Poli",
+      "role": "Tech Volunteer",
+      "data": "Setembro, 2019 - Dezembro, 2020",
+      "image": "adp.jpg",
+      "description": "Desenvolvi o site do Edital de Projetos 2020 (Angular) e o novo site institucional com CMS (React/Gatsby). O novo site elevou a conversão e as doações. Criei um dashboard gamificado em tempo real para o Mês de Doar, aumentando engajamento.",
+      "stack": "Angular, React, Gatsby"
+    },
+    {
+      "name": "Poli Júnior",
+      "role": "Software Engineer",
+      "data": "Novembro, 2018 - Janeiro, 2021",
+      "image": "poli-junior.png",
+      "description": "Desenvolvi aplicações sob medida com Django, React, React Native e Node.js. Introduzi e ensinei práticas de Arquitetura de Software e as stacks React/Node para elevar a qualidade dos projetos. Co-organizei o Workshop Integrativo, criando um sistema de informação em Django e um chatbot de WhatsApp para otimizar conversão e fluxo do evento.",
+      "stack": "Python, Django, Node.js, React, React Native"
+    }
+  ]
+}

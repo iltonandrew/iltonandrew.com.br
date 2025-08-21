@@ -1,4 +1,5 @@
 import { Stack, Text, Img, keyframes } from "@chakra-ui/react";
+import useTranslation from "next-translate/useTranslation";
 
 import { useState, useRef, useEffect } from "react";
 
@@ -21,6 +22,7 @@ export default function Company({
   description,
   stack,
 }: CompanyProps) {
+  const { t } = useTranslation("work");
   const ref = useRef<HTMLDivElement | null>(null);
   const entry = useIntersectionObserver(ref, {});
   const isVisible = !!entry?.isIntersecting;
@@ -47,7 +49,7 @@ export default function Company({
         direction="row"
         p={8}
       >
-        <Img src={`"../../images/companies/${image}`} alt={name} maxH="75px" />
+        <Img src={`/images/companies/${image}`} alt={name} maxH="75px" />
         <Stack direction="column" pl={4}>
           <Text fontWeight={"bold"} fontSize="xl" marginBottom={"-2"}>
             {name}
@@ -57,7 +59,7 @@ export default function Company({
             {data}
           </Text>
           <Text fontSize={"xs"}>{description}</Text>
-          <Text fontSize={"xs"}>Trabalhei com: {stack}</Text>
+          <Text fontSize={"xs"}>{t("workedWith")}: {stack}</Text>
         </Stack>
       </Stack>
     </>

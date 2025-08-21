@@ -1,7 +1,9 @@
 import { Button, Stack, Link, useColorModeValue } from "@chakra-ui/react";
 import { DownloadIcon } from "@chakra-ui/icons";
+import useTranslation from "next-translate/useTranslation";
 
 export default function DownloadButton() {
+  const { t } = useTranslation("common");
   return (
     <Stack display={"flex"} alignItems="center" mt="4">
       <Link href="/resumes/Ilton_Andrew-CV-PT-BR.pdf" target={"_blank"}>
@@ -16,7 +18,7 @@ export default function DownloadButton() {
           borderRadius={"3xl"}
           maxW="md"
         >
-          Baixar Currículo
+          {t("resume.download")}
         </Button>
       </Link>
       <Link
@@ -24,7 +26,7 @@ export default function DownloadButton() {
         target={"_blank"}
         color={useColorModeValue("cyan.500", "brand.secondary")}
       >
-        Versão em inglês
+        {t("resume.englishVersion")}
       </Link>
     </Stack>
   );

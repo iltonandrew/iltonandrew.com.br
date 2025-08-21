@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "home": "Início",
+    "blog": "Blog",
+    "about": "Quem sou",
+    "work": "O que fiz até agora",
+    "whereWorked": "Onde trabalhei",
+    "whereWorkedSublabel": "Empresas que já impactei",
+    "projects": "Projetos",
+    "projectsSublabel": "O que já desenvolvi",
+    "contact": "Entre em contato"
+  },
+  "hero": {
+    "name": "Ilton Andrew",
+    "description": "Formado em Engenharia Elétrica e de Computação pela Escola Politécnica da USP, atualmente se aventurando em Engenharia de Software.",
+    "typewriter": [
+      "Eu sou Engenheiro.",
+      "Desenvolvedor.",
+      "Construo coisas para a web."
+    ],
+    "buttons": {
+      "work": "Onde trabalhei",
+      "contact": "Entre em contato"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "heading": "Meus Posts",
+    "back": "Voltar"
+  },
+  "resume": {
+    "download": "Baixar Currículo",
+    "englishVersion": "Versão em inglês"
+  },
+  "footer": {
+    "copyright": "© 2025 Ilton Andrew. Todos os direitos reservados."
+  }
+}

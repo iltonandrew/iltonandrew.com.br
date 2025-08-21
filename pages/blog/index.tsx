@@ -3,15 +3,17 @@ import { Container, Heading, Divider } from "@chakra-ui/layout";
 import { ContextType, PostMeta } from "@/types";
 import Article from "@/components/Article";
 import Head from "next/head";
+import useTranslation from "next-translate/useTranslation";
 
 export default function Blog({ posts }: { posts: PostMeta[] }) {
+  const { t } = useTranslation("common");
   return (
     <>
       <Head>
-        <title>Blog</title>
+        <title>{t("blog.title")}</title>
       </Head>
       <Container maxW={"7xl"} p="12" minH={"100vh"}>
-        <Heading as="h1">Meus Posts</Heading>
+        <Heading as="h1">{t("blog.heading")}</Heading>
         {posts.map((post) => (
           <>
             <Article post={post} key={post.slug} />

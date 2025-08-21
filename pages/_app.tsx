@@ -6,6 +6,8 @@ import { theme } from "../styles/theme";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import appWithI18n from 'next-translate/appWithI18n';
+import i18nConfig from '../i18n.json';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -18,4 +20,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithI18n(MyApp as any, {
+  ...i18nConfig,
+}) as any;
