@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Início",
+    "blog": "Blog",
+    "work": "Trabalho",
+    "contact": "Contato"
+  },
+  "hero": {
+    "name": "Ilton Andrew",
+    "typewriter": {
+      "engineer": "Eu sou um Engenheiro.",
+      "developer": "Desenvolvedor.",
+      "builder": "construo coisas para a web."
+    },
+    "description": "Formado em Engenharia Elétrica e de Computação pela Escola Politécnica da Universidade de São Paulo, atualmente se aventurando no mundo da Engenharia de Software.",
+    "buttons": {
+      "work": "Onde trabalhei",
+      "contact": "Entre em contato"
+    }
+  },
+  "work": {
+    "title": "Minha Experiência Profissional",
+    "downloadResume": "Baixar Currículo",
+    "workedWith": "Trabalhei com:",
+    "companies": {
+      "mediaHero": {
+        "name": "Media Hero",
+        "role": "Head of Software Engineering",
+        "period": "Fevereiro 2023",
+        "description": "Criei uma nova plataforma de integração e visualização de dados do zero, utilizando tecnologias de ponta como NextJS com TRPC e arquitetando o projeto desde o início, com Terraform como infraestrutura como código para automatizar processos DevOps e aumentar a confiabilidade de nossos pipelines. Também trabalhei diretamente com a Equipe de Produto para projetar a plataforma, garantindo que nossa visão de produto fosse seguida e aprimoramos nossa experiência do usuário.",
+        "stack": "NextJS, TRPC, Terraform, TypeScript, PostgreSQL"
+      },
+      "xpTreasury": {
+        "name": "XP Inc.",
+        "role": "Treasury Software Engineer",
+        "period": "Agosto, 2022 - Fevereiro, 2023",
+        "description": "Trabalhei na XP desenvolvendo ferramentas para melhorar o fluxo de trabalho e confiabilidade dos processos e na centralização de dados para nossos diversos bancos de dados e sistemas. Também trabalhei em um projeto web que visava mostrar em tempo real dados financeiros atuais das instituições, coletando constantemente feedback diretamente dos analistas, implementando e priorizando recursos que tornariam seu trabalho mais produtivo e assertivo.",
+        "stack": "Python, Go, SQL, Django, Power BI"
+      },
+      "pipefy": {
+        "name": "Pipefy",
+        "role": "Jr. Software Engineer",
+        "period": "Janeiro, 2021 - Julho, 2022",
+        "description": "Fiz parte do Young Guns Tech, um programa de Trainee que me permitiu transitar entre as áreas da empresa e conhecer nosso produto e seus clientes. Ao longo da minha trajetória desenvolvi diversas features para a plataforma, Share Inbox, Form Hub, Guest Portal e na área de Product-led Growth (PLG) melhorando a conversão da plataforma através da melhora da usabilidade e FTUE. Durante meu tempo no PLG, trabalhei de perto com nossos designers para desenvolver vários testes A/B para aumentar nossa conversão na plataforma.",
+        "stack": "TypeScript, React, GraphQL, Ruby on Rails, Elixir"
+      },
+      "xpIntern": {
+        "name": "XP Inc.",
+        "role": "Summer Intern",
+        "period": "Dezembro, 2019 - Fevereiro, 2020",
+        "description": "Trabalhei no Project Squad, onde desenvolvi um portal baseado em Django para monitoramento de performance de fundos, desenvolvi dashboards de fundos em Power BI para integrar com o Portal e também desenvolvi uma série de automatizações para melhorar a qualidade de vida dos membros da área, além de gerenciar e testar atualizações de plataformas da área.",
+        "stack": "Python, Django, Power BI, SQL"
+      },
+      "amigosDaPoli": {
+        "name": "Amigos da Poli",
+        "role": "Tech Volunteer",
+        "period": "Setembro, 2019 - Dezembro, 2020",
+        "description": "Desenvolvi o site do Edital de Projetos 2020, utilizando Angular, e desenvolvi o novo site da Marca com CMS utilizando tecnologias React e Gatsby. O novo site foi crucial para aumentar conversão e doações para o fundo, para o Mês de Doar, desenvolvi um dashboard que exibia o número de doações em tempo real de forma gamificada, o que aumentou o engajamento dos doadores durante o evento.",
+        "stack": "Angular, React, Gatsby"
+      },
+      "poliJunior": {
+        "name": "Poli Júnior",
+        "role": "Software Engineer",
+        "period": "Novembro, 2018 - Janeiro, 2021",
+        "description": "Desenvolvi aplicações customizadas para diversos clientes utilizando Django, React, React Native e NodeJS. Introduzi e ensinei as tecnologias React, React Native e NodeJS, bem como noções de Arquitetura de Software para a empresa a fim de melhorar a qualidade de nossos projetos. Também tive a oportunidade de organizar o Workshop Integrativo, a maior feira de recrutamento da América Latina. Para melhorar a performance do evento, desenvolvi com uma equipe um projeto de sistema de informações baseado em Django, responsável por digitalizar e centralizar os dados da feira. Durante o evento, desenvolvi um ChatBot do WhatsApp para otimizar conversões e tráfego do evento.",
+        "stack": "Python, Django, NodeJS, React, React Native"
+      }
+    }
+  },
+  "projects": {
+    "title": "Projetos Pessoais",
+    "converter": {
+      "name": "Converter",
+      "description": "Uma ferramenta web simples e rápida para converter arquivos entre diferentes formatos. Suporta conversão de imagens, documentos e outros tipos de arquivo.",
+      "url": "https://converter.gege.codes/"
+    }
+  },
+  "footer": {
+    "madeWith": "Feito com",
+    "by": "por"
+  },
+  "meta": {
+    "title": "Ilton Andrew - Portfólio & Blog",
+    "description": "Portfólio & Blog"
+  }
+}

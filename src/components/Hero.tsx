@@ -8,10 +8,13 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import useTranslation from "next-translate/useTranslation";
 
 import Typewriter from "typewriter-effect";
 
 export default function Hero() {
+  const { t } = useTranslation("common");
+  
   return (
     <Stack
       direction={{ base: "column", md: "row" }}
@@ -36,7 +39,7 @@ export default function Hero() {
                 zIndex: -1,
               }}
             >
-              Ilton Andrew
+              {t("hero.name")}
             </Text>
             <br />{" "}
             <Text color={"brand.primary"} as={"span"}>
@@ -46,23 +49,20 @@ export default function Hero() {
                 }}
                 onInit={(typewriter) => {
                   typewriter
-
-                    .typeString("Eu sou um Engenheiro.")
+                    .typeString(t("hero.typewriter.engineer"))
                     .pauseFor(1000)
-                    .deleteChars(11)
-                    .typeString("Desenvolvedor.")
+                    .deleteChars(t("hero.typewriter.engineer").length)
+                    .typeString(t("hero.typewriter.developer"))
                     .pauseFor(1000)
-                    .deleteChars(21)
-                    .typeString("construo coisas para a web.")
+                    .deleteChars(t("hero.typewriter.developer").length)
+                    .typeString(t("hero.typewriter.builder"))
                     .start();
                 }}
               />
             </Text>{" "}
           </Heading>
           <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
-            Formado em Engenharia Elétrica e de Computação pela Escola
-            Politécnica da Universidade de São Paulo, atualmente se aventurando
-            no mundo da Engenharia de Software.
+            {t("hero.description")}
           </Text>
           <Stack direction={{ base: "column", md: "row" }} spacing={4}>
             <Link href="#work" scroll={false}>
@@ -74,12 +74,12 @@ export default function Hero() {
                   bg: "brand.secondary",
                 }}
               >
-                Onde trabalhei
+                {t("hero.buttons.work")}
               </Button>
             </Link>
 
             <Link href="mailto:iltonandrew+contato@gmail.com">
-              <Button rounded={"full"}>Entre em contato</Button>
+              <Button rounded={"full"}>{t("hero.buttons.contact")}</Button>
             </Link>
           </Stack>
         </Stack>
