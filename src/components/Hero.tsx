@@ -10,8 +10,10 @@ import {
 import Link from "next/link";
 
 import Typewriter from "typewriter-effect";
+import useTranslation from "next-translate/useTranslation";
 
 export default function Hero() {
+  const { t } = useTranslation("common");
   return (
     <Stack
       direction={{ base: "column", md: "row" }}
@@ -39,30 +41,27 @@ export default function Hero() {
               Ilton Andrew
             </Text>
             <br />{" "}
-            <Text color={"brand.primary"} as={"span"}>
+            <Text color={"brand.primary"} as={"span"} textShadow="0 0 12px rgba(246, 82, 160, 0.45)">
               <Typewriter
                 options={{
                   cursor: "_",
                 }}
                 onInit={(typewriter) => {
                   typewriter
-
-                    .typeString("Eu sou um Engenheiro.")
+                    .typeString(t("hero.type.engineer"))
                     .pauseFor(1000)
-                    .deleteChars(11)
-                    .typeString("Desenvolvedor.")
+                    .deleteAll()
+                    .typeString(t("hero.type.developer"))
                     .pauseFor(1000)
-                    .deleteChars(21)
-                    .typeString("construo coisas para a web.")
+                    .deleteAll()
+                    .typeString(t("hero.type.buildWeb"))
                     .start();
                 }}
               />
             </Text>{" "}
           </Heading>
           <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
-            Formado em Engenharia Elétrica e de Computação pela Escola
-            Politécnica da Universidade de São Paulo, atualmente se aventurando
-            no mundo da Engenharia de Software.
+            {t("hero.subtitle")}
           </Text>
           <Stack direction={{ base: "column", md: "row" }} spacing={4}>
             <Link href="#work" scroll={false}>
@@ -74,12 +73,17 @@ export default function Hero() {
                   bg: "brand.secondary",
                 }}
               >
-                Onde trabalhei
+                {t("hero.ctaWork")}
               </Button>
             </Link>
 
             <Link href="mailto:iltonandrew+contato@gmail.com">
-              <Button rounded={"full"}>Entre em contato</Button>
+              <Button rounded={"full"}>{t("hero.ctaContact")}</Button>
+            </Link>
+            <Link href="https://converter.gege.codes/" target="_blank">
+              <Button rounded={"full"} variant="outline" colorScheme="pink">
+                {t("hero.ctaConverter")}
+              </Button>
             </Link>
           </Stack>
         </Stack>

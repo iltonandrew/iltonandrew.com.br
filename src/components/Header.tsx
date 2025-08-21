@@ -4,6 +4,7 @@ import {
   Text,
   IconButton,
   Button,
+  ButtonGroup,
   Stack,
   Collapse,
   Icon,
@@ -24,10 +25,44 @@ import {
 import { ToggleColorMode } from "./ToggleColorMode";
 
 import { useRouter } from "next/router";
+import useTranslation from "next-translate/useTranslation";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const router = useRouter();
+  const { t } = useTranslation("common");
+
+  const navItems: Array<NavItem> = [
+    {
+      label: t("nav.about"),
+      href: "/#about",
+    },
+    {
+      label: t("nav.work"),
+      href: "/#work",
+      children: [
+        {
+          label: t("nav.whereWorked"),
+          subLabel: t("nav.whereWorkedSub"),
+          href: "/#work",
+        },
+        {
+          label: t("nav.projects"),
+          subLabel: t("nav.projectsSub"),
+        },
+      ],
+    },
+    {
+      label: t("nav.contact"),
+      href: "mailto:iltonandrew+contato@gmail.com",
+    },
+  ];
+
+  const currentLocale = router.locale || "pt-BR";
+  const switchLocale = (locale: string) => {
+    if (locale === currentLocale) return;
+    router.push(router.asPath, router.asPath, { locale });
+  };
 
   return (
     <Box>
@@ -71,7 +106,7 @@ export default function WithSubnavigation() {
             />
           </Link>
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav />
+            <DesktopNav items={navItems} />
           </Flex>
         </Flex>
 
@@ -82,6 +117,22 @@ export default function WithSubnavigation() {
           spacing={6}
         >
           <ToggleColorMode />
+          <ButtonGroup isAttached size="sm" variant="outline">
+            <Button
+              onClick={() => switchLocale("pt-BR")}
+              colorScheme={currentLocale === "pt-BR" ? "pink" : undefined}
+              borderColor={useColorModeValue("gray.300", "gray.600")}
+            >
+              PT
+            </Button>
+            <Button
+              onClick={() => switchLocale("en")}
+              colorScheme={currentLocale === "en" ? "pink" : undefined}
+              borderColor={useColorModeValue("gray.300", "gray.600")}
+            >
+              EN
+            </Button>
+          </ButtonGroup>
           <Button
             textAlign={"center"}
             fontSize={"sm"}
@@ -90,30 +141,31 @@ export default function WithSubnavigation() {
             bg={"brand.primary"}
             _hover={{
               bg: "pink.300",
+              boxShadow: "0 0 16px rgba(246, 82, 160, 0.6)",
             }}
             as="a"
             href={router.pathname === "/blog" ? "/" : "/blog"}
           >
-            {router.pathname === "/blog" ? "Home" : "Blog"}
+            {router.pathname === "/blog" ? t("nav.home") : t("nav.blog")}
           </Button>
         </Stack>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav items={navItems} />
       </Collapse>
     </Box>
   );
 }
 
-const DesktopNav = () => {
+const DesktopNav = ({ items }: { items: Array<NavItem> }) => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
   // const linkHoverColor = useColorModeValue("brand.primary", "brand.primary");
   const popoverContentBgColor = useColorModeValue("white", "gray.900");
 
   return (
     <Stack direction={"row"} spacing={4}>
-      {NAV_ITEMS.map((navItem) => (
+      {items.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
@@ -193,14 +245,14 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   );
 };
 
-const MobileNav = () => {
+const MobileNav = ({ items }: { items: Array<NavItem> }) => {
   return (
     <Stack
       bg={useColorModeValue("white", "gray.800")}
       p={4}
       display={{ md: "none" }}
     >
-      {NAV_ITEMS.map((navItem) => (
+      {items.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
     </Stack>
@@ -267,40 +319,4 @@ interface NavItem {
   href?: string;
 }
 
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: "Quem sou",
-    href: "/#about",
-    // children: [
-    //   {
-    //     label: "Explore Design Work",
-    //     subLabel: "Trending Design to inspire you",
-    //     href: "#",
-    //   },
-    //   {
-    //     label: "New & Noteworthy",
-    //     subLabel: "Up-and-coming Designers",
-    //     href: "#",
-    //   },
-    // ],
-  },
-  {
-    label: "O que fiz até agora",
-    href: "/#work",
-    children: [
-      {
-        label: "Onde trabalhei",
-        subLabel: "Empresas que já impactei",
-        href: "/#work",
-      },
-      {
-        label: "Projetos",
-        subLabel: "O que já desenvolvi",
-      },
-    ],
-  },
-  {
-    label: "Entre em contato",
-    href: "mailto:iltonandrew+contato@gmail.com",
-  },
-];
+// NAV items are generated from translations in the component

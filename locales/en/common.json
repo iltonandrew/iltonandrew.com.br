@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "about": "About",
+    "work": "What I've done",
+    "whereWorked": "Where I've worked",
+    "whereWorkedSub": "Companies I've impacted",
+    "projects": "Projects",
+    "projectsSub": "Things I've built",
+    "contact": "Get in touch",
+    "home": "Home",
+    "blog": "Blog",
+    "language": "Language"
+  },
+  "hero": {
+    "subtitle": "Electrical and Computer Engineering graduate from the Polytechnic School of the University of São Paulo, currently focused on Software Engineering.",
+    "ctaWork": "Where I've worked",
+    "ctaContact": "Get in touch",
+    "ctaConverter": "Open Converter (side project)",
+    "type": {
+      "engineer": "I'm an Engineer.",
+      "developer": "Developer.",
+      "buildWeb": "I build things for the web."
+    }
+  },
+  "companies": {
+    "title": "Work Experience",
+    "workedWith": "Worked with",
+    "mediaHero": {
+      "name": "Media Hero",
+      "role": "Head of Software Engineering",
+      "date": "February 2023 — Present",
+      "description": "Built from scratch a data-integration and visualization platform using Next.js and tRPC, defining the architecture and infrastructure with Terraform to automate DevOps processes and increase pipeline reliability. Partnered closely with the Product team to design the platform, ensuring alignment with the product vision and elevating the user experience.",
+      "stack": "Next.js, tRPC, Terraform, AWS, DevOps"
+    },
+    "xp_treasury": {
+      "name": "XP Inc.",
+      "role": "Treasury Software Engineer",
+      "date": "August 2022 — February 2023",
+      "description": "Built tools to improve workflow efficiency and reliability across treasury processes, and drove data centralization across multiple databases and systems. Developed a real-time web app to display institutional financial data, gathering continuous feedback from analysts to prioritize features that boosted productivity and decision-making.",
+      "stack": "Python, Go, SQL, React"
+    },
+    "pipefy": {
+      "name": "Pipefy",
+      "role": "Jr. Software Engineer",
+      "date": "January 2021 — July 2022",
+      "description": "Joined the Young Guns Tech trainee program, rotating across teams to learn the product and customer needs. Shipped features such as Share Inbox, Form Hub and Guest Portal. In the Product-led Growth team, worked closely with Design to run A/B tests that improved FTUE and conversion.",
+      "stack": "TypeScript, React, Next.js, GraphQL, Ruby on Rails, Elixir"
+    },
+    "xp_intern": {
+      "name": "XP Inc.",
+      "role": "Summer Intern",
+      "date": "December 2019 — February 2020",
+      "description": "Delivered a Django-based portal to monitor fund performance, built Power BI dashboards integrated with the portal, and implemented automations to improve team workflows. Also supported platform updates through management and testing.",
+      "stack": "Python, Django, Power BI, SQL"
+    },
+    "adp": {
+      "name": "Amigos da Poli",
+      "role": "Tech Volunteer",
+      "date": "September 2019 — December 2020",
+      "description": "Built the 2020 Project Notice website in Angular and a new brand website with a React/Gatsby CMS. The new site increased conversions and donations. For the Giving Month, developed a real-time donations dashboard with a gamified UI that increased donor engagement.",
+      "stack": "Angular, React, Gatsby"
+    },
+    "poli": {
+      "name": "Poli Junior",
+      "role": "Software Engineer",
+      "date": "November 2018 — January 2021",
+      "description": "Built custom applications for multiple clients using Django, React, React Native and Node.js. Introduced and taught React, React Native and Node.js, as well as software architecture fundamentals to improve project quality. Co-organized Latin America's largest recruitment fair and developed supporting systems, including a WhatsApp chatbot to improve conversions and event flow.",
+      "stack": "Python, Django, Node.js, React, React Native"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "myPosts": "My Posts",
+    "back": "Back"
+  },
+  "resume": {
+    "download": "Download Resume",
+    "englishVersion": "English version",
+    "portugueseVersion": "Portuguese version"
+  }
+}
+
