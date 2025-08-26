@@ -25,7 +25,7 @@ import { ToggleColorMode } from "./ToggleColorMode";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 import { useRouter } from "next/router";
-import useTranslation from "next-translate/useTranslation";
+import { useTranslation } from "next-translate";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();

@@ -18,7 +18,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import { ReactNode } from "react";
-import useTranslation from "next-translate/useTranslation";
+import { useTranslation } from "next-translate";
 
 const SocialButton = ({
   children,

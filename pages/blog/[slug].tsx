@@ -12,7 +12,7 @@ import { Container, Heading, Button } from "@chakra-ui/react";
 import { MDXComponents } from "@/components/MDXComponents";
 import Link from "next/link";
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import useTranslation from "next-translate/useTranslation";
+import { useTranslation } from "next-translate";
 
 interface MDXPost {
   meta: PostMeta;

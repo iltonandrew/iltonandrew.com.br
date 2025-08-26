@@ -8,7 +8,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import useTranslation from "next-translate/useTranslation";
+import { useTranslation } from "next-translate";
 
 import Typewriter from "typewriter-effect";
 

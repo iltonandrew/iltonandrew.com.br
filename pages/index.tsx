@@ -5,7 +5,7 @@ import Hero from "../src/components/Hero";
 import Companies from "@/components/Companies";
 import { Divider } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
-import useTranslation from "next-translate/useTranslation";
+import { useTranslation } from "next-translate";
 
 const Home: NextPage = () => {
   const { t, lang } = useTranslation("common");

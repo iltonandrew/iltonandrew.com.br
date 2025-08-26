@@ -3,7 +3,7 @@ import { Stack, Text, Img, keyframes, Link } from "@chakra-ui/react";
 import { useState, useRef, useEffect } from "react";
 
 import { useIntersectionObserver } from "@/hooks";
-import useTranslation from "next-translate/useTranslation";
+import { useTranslation } from "next-translate";
 
 type CompanyProps = {
   name: string;

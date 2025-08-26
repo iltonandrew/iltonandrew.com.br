@@ -1,7 +1,7 @@
 import { Stack, Container, Divider, Heading } from "@chakra-ui/react";
 import CompanyListItem from "./CompanyListItem";
 import DownloadButton from "./DownloadButton";
-import useTranslation from "next-translate/useTranslation";
+import { useTranslation } from "next-translate";
 
 export default function Companies() {
   const { t } = useTranslation("common");

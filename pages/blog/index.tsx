@@ -3,7 +3,7 @@ import { Container, Heading, Divider } from "@chakra-ui/layout";
 import { ContextType, PostMeta } from "@/types";
 import Article from "@/components/Article";
 import Head from "next/head";
-import useTranslation from "next-translate/useTranslation";
+import { useTranslation } from "next-translate";
 
 export default function Blog({ posts }: { posts: PostMeta[] }) {
   const { t } = useTranslation("common");
