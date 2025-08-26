@@ -5,10 +5,10 @@ import Hero from "../src/components/Hero";
 import Companies from "@/components/Companies";
 import { Divider } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
-import { useTranslation } from "next-translate";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const Home: NextPage = () => {
-  const { t, lang } = useTranslation("common");
+  const { t, locale } = useTranslation();
   
   return (
     <>
@@ -17,11 +17,11 @@ const Home: NextPage = () => {
       </Head>
       <NextSeo
         title="Ilton Andrew"
-        description={lang === "pt-BR" ? "Portifólio & Blog" : "Portfolio & Blog"}
+        description={locale === "pt-BR" ? "Portifólio & Blog" : "Portfolio & Blog"}
         openGraph={{
           url: "https://iltonandrew.com.br",
           title: "Ilton Andrew",
-          description: lang === "pt-BR" ? "Portifólio & Blog" : "Portfolio & Blog",
+          description: locale === "pt-BR" ? "Portifólio & Blog" : "Portfolio & Blog",
           images: [
             {
               url: "/images/profile_photo.jpg",

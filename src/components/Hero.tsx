@@ -8,12 +8,12 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { useTranslation } from "next-translate";
+import { useTranslation } from "@/hooks/useTranslation";
 
 import Typewriter from "typewriter-effect";
 
 export default function Hero() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
   return (
     <Stack
       direction={{ base: "column", md: "row" }}

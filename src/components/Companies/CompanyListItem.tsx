@@ -3,7 +3,7 @@ import { Stack, Text, Img, keyframes, Link } from "@chakra-ui/react";
 import { useState, useRef, useEffect } from "react";
 
 import { useIntersectionObserver } from "@/hooks";
-import { useTranslation } from "next-translate";
+import { useTranslation } from "@/hooks/useTranslation";
 
 type CompanyProps = {
   name: string;
@@ -24,7 +24,7 @@ export default function Company({
   stack,
   link,
 }: CompanyProps) {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
   const ref = useRef<HTMLDivElement | null>(null);
   const entry = useIntersectionObserver(ref, {});
   const isVisible = !!entry?.isIntersecting;

@@ -25,12 +25,12 @@ import { ToggleColorMode } from "./ToggleColorMode";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 import { useRouter } from "next/router";
-import { useTranslation } from "next-translate";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const router = useRouter();
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
 
   return (
     <Box>
@@ -137,7 +137,7 @@ const getTranslatedNavItems = (t: any) => [
 ];
 
 const DesktopNav = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
   const linkColor = useColorModeValue("gray.600", "gray.200");
   // const linkHoverColor = useColorModeValue("brand.primary", "brand.primary");
   const popoverContentBgColor = useColorModeValue("white", "gray.900");
@@ -225,7 +225,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 };
 
 const MobileNav = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
   return (
     <Stack
       bg={useColorModeValue("white", "gray.800")}

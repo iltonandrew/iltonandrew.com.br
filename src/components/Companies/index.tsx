@@ -1,10 +1,10 @@
 import { Stack, Container, Divider, Heading } from "@chakra-ui/react";
 import CompanyListItem from "./CompanyListItem";
 import DownloadButton from "./DownloadButton";
-import { useTranslation } from "next-translate";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Companies() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
   return (
     <Container maxW={"8xl"} p="8" id="work">
       <Heading size="lg" mb={4} ml={8} color={"brand.primary"}>
