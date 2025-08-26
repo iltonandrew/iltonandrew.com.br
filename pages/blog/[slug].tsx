@@ -12,6 +12,7 @@ import { Container, Heading, Button } from "@chakra-ui/react";
 import { MDXComponents } from "@/components/MDXComponents";
 import Link from "next/link";
 import { ArrowBackIcon } from "@chakra-ui/icons";
+import useTranslation from "next-translate/useTranslation";
 
 interface MDXPost {
   meta: PostMeta;
@@ -22,6 +23,7 @@ interface MDXPost {
 }
 
 export default function BlogPost({ post }: { post: MDXPost }) {
+  const { t } = useTranslation("common");
   return (
     <>
       <Head>
@@ -38,7 +40,7 @@ export default function BlogPost({ post }: { post: MDXPost }) {
             ml={-4}
             mb={4}
           >
-            Voltar
+            {t("blog.home")}
           </Button>
         </Link>
         <Heading mb={8}>{post.meta.title}</Heading>

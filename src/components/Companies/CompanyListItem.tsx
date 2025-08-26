@@ -1,8 +1,9 @@
-import { Stack, Text, Img, keyframes } from "@chakra-ui/react";
+import { Stack, Text, Img, keyframes, Link } from "@chakra-ui/react";
 
 import { useState, useRef, useEffect } from "react";
 
 import { useIntersectionObserver } from "@/hooks";
+import useTranslation from "next-translate/useTranslation";
 
 type CompanyProps = {
   name: string;
@@ -11,6 +12,7 @@ type CompanyProps = {
   data: string;
   description: string;
   stack: string;
+  link?: string;
 };
 
 export default function Company({
@@ -20,7 +22,9 @@ export default function Company({
   data,
   description,
   stack,
+  link,
 }: CompanyProps) {
+  const { t } = useTranslation("common");
   const ref = useRef<HTMLDivElement | null>(null);
   const entry = useIntersectionObserver(ref, {});
   const isVisible = !!entry?.isIntersecting;
@@ -49,15 +53,23 @@ export default function Company({
       >
         <Img src={`"../../images/companies/${image}`} alt={name} maxH="75px" />
         <Stack direction="column" pl={4}>
-          <Text fontWeight={"bold"} fontSize="xl" marginBottom={"-2"}>
-            {name}
-          </Text>
+          {link ? (
+            <Link href={link} isExternal>
+              <Text fontWeight={"bold"} fontSize="xl" marginBottom={"-2"} color="brand.primary" _hover={{ textDecoration: "underline" }}>
+                {name}
+              </Text>
+            </Link>
+          ) : (
+            <Text fontWeight={"bold"} fontSize="xl" marginBottom={"-2"}>
+              {name}
+            </Text>
+          )}
           <Text>{role}</Text>
           <Text fontStyle={"italic"} fontSize={"2xs"}>
             {data}
           </Text>
           <Text fontSize={"xs"}>{description}</Text>
-          <Text fontSize={"xs"}>Trabalhei com: {stack}</Text>
+          <Text fontSize={"xs"}>{t("work.workedWith")} {stack}</Text>
         </Stack>
       </Stack>
     </>

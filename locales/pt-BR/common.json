@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "about": "Quem sou",
+    "work": "O que fiz até agora",
+    "workSub": {
+      "companies": "Onde trabalhei",
+      "companiesDesc": "Empresas que já impactei",
+      "projects": "Projetos",
+      "projectsDesc": "O que já desenvolvi"
+    },
+    "contact": "Entre em contato"
+  },
+  "hero": {
+    "title": "Olá, eu sou o Ilton Andrew",
+    "subtitle": "Software Engineer & Tech Lead",
+    "description": "Desenvolvedor apaixonado por criar soluções inovadoras e escaláveis. Especializado em arquitetura de software, desenvolvimento full-stack e liderança técnica.",
+    "typewriter": {
+      "engineer": "Engenheiro",
+      "developer": "Desenvolvedor",
+      "builder": "construo coisas para a web"
+    }
+  },
+  "work": {
+    "title": "Minha Experiência Profissional",
+    "workedWith": "Trabalhei com:",
+    "companies": {
+      "mediaHero": {
+        "name": "Media Hero",
+        "role": "Head of Software Engineering",
+        "period": "Fevereiro 2023",
+        "description": "Criei uma nova plataforma para integração e visualização de dados do zero, usando tecnologia de ponta, NextJS junto com TRPC e arquitetando o projeto desde o início, com Terraform como infraestrutura como código, para automatizar processos DevOps e aumentar a confiabilidade de nossos pipelines. Também trabalhei diretamente com a Equipe de Produto para projetar a plataforma, garantindo que nossa visão de produto fosse seguida e melhorando nossa experiência do usuário."
+      },
+      "xp": {
+        "name": "XP Inc.",
+        "role": "Treasury Software Engineer",
+        "period": "Agosto, 2022 - Fevereiro, 2023",
+        "description": "Trabalhei na XP desenvolvendo ferramentas para melhorar o workflow e confiabilidade dos processos e na centralização de dados para nossas várias bases de dados e sistemas. Também trabalhei em um projeto web que visava mostrar em tempo real dados financeiros atuais das instituições, coletando constantemente feedback diretamente dos analistas, implementando e priorizando recursos que tornariam seu trabalho mais produtivo e assertivo."
+      },
+      "pipefy": {
+        "name": "Pipefy",
+        "role": "Jr. Software Engineer",
+        "period": "Janeiro, 2021 - Julho, 2022",
+        "description": "Fiz parte do Young Guns Tech, um programa de Trainee que me permitiu transitar entre as áreas da empresa e conhecer o nosso produto e seus clientes. Ao longo da minha trajetória desenvolvi diversas features para a plataforma, a Share Inbox, a Form Hub, Guest Portal e na área de Product Led Growth melhorando a conversão da plataforma através da melhora da usabilidade e FTUE. Durante meu tempo no PLG, trabalhei de perto com nossos designers para desenvolver vários testes A/B para aumentar nossa conversão na plataforma. Trabalhei com TypeScript, React, GraphQL, Ruby on Rails, Elixir e outras tecnologias."
+      },
+      "xpIntern": {
+        "name": "XP Inc.",
+        "role": "Summer Intern",
+        "period": "Dezembro, 2019 - Fevereiro, 2020",
+        "description": "Trabalhei no Project Squad, onde desenvolvi um portal baseado em Django para monitoramento de performance de fundos, desenvolvi dashboards dos fundos em Power BI integrando com o Portal e também desenvolvi uma série de automatizações para melhorar a qualidade de vida dos membros da área, além de gerenciar e testar atualizações de plataformas da área."
+      },
+      "adp": {
+        "name": "Amigos da Poli",
+        "role": "Tech Volunteer",
+        "period": "Setembro, 2019 - Dezembro, 2020",
+        "description": "Desenvolvi o site do Edital de Projetos de 2020, utilizando Angular, e desenvolvi o novo site da Marca com CMS utilizando as tecnologias React e Gatsby. O novo site foi crucial para aumentar a conversão e doações para o fundo, para o Mês de Doar, desenvolvi uma dashboard que exibia em tempo real o número de doações de forma gamificada, o que aumentou o engajamento dos doadores durante o evento."
+      },
+      "poliJunior": {
+        "name": "Poli Júnior",
+        "role": "Software Engineer",
+        "period": "Novembro, 2018 - Janeiro, 2021",
+        "description": "Desenvolvi aplicações customizadas para diversos clientes utilizando Django, React, React Native e NodeJS. Introduzi e ensinei as tecnologias React, React Native e NodeJS, bem como noções de Arquitetura de Software para a empresa a fim de melhorar a qualidade de nossos projetos. Também tive a oportunidade de organizar o Workshop Integrativo, a maior feira de recrutamento da América Latina. Para melhorar o desempenho do evento, desenvolvi com uma equipe um projeto de sistema de informação baseado em Django, responsável por digitalizar e centralizar os dados da feira. Durante o evento, desenvolvi um ChatBot do WhatsApp para otimizar conversões e tráfego do evento."
+      }
+    },
+    "sideProjects": {
+      "title": "Projetos Pessoais",
+      "personalProject": "Projeto Pessoal",
+      "converter": {
+        "name": "Converter.gege.codes",
+        "description": "Uma ferramenta online para conversão de diferentes formatos de dados e unidades de medida.",
+        "link": "https://converter.gege.codes/"
+      }
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "home": "Home",
+    "readMore": "Ler mais"
+  },
+  "footer": {
+    "madeWith": "Feito com ❤️ por Ilton Andrew"
+  }
+}

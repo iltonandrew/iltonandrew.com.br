@@ -18,6 +18,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import { ReactNode } from "react";
+import useTranslation from "next-translate/useTranslation";
 
 const SocialButton = ({
   children,
@@ -64,6 +65,7 @@ const Logo = (props: any) => {
 };
 
 export default function Footer() {
+  const { t } = useTranslation("common");
   return (
     <footer>
       <Box

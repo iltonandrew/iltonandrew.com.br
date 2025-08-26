@@ -22,12 +22,15 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { ToggleColorMode } from "./ToggleColorMode";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 import { useRouter } from "next/router";
+import useTranslation from "next-translate/useTranslation";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const router = useRouter();
+  const { t } = useTranslation("common");
 
   return (
     <Box>
@@ -81,6 +84,7 @@ export default function WithSubnavigation() {
           direction={"row"}
           spacing={6}
         >
+          <LanguageSwitcher />
           <ToggleColorMode />
           <Button
             textAlign={"center"}
@@ -94,7 +98,7 @@ export default function WithSubnavigation() {
             as="a"
             href={router.pathname === "/blog" ? "/" : "/blog"}
           >
-            {router.pathname === "/blog" ? "Home" : "Blog"}
+            {router.pathname === "/blog" ? t("blog.home") : t("blog.title")}
           </Button>
         </Stack>
       </Flex>
@@ -106,14 +110,41 @@ export default function WithSubnavigation() {
   );
 }
 
+const getTranslatedNavItems = (t: any) => [
+  {
+    label: t("nav.about"),
+    href: "/#about",
+  },
+  {
+    label: t("nav.work"),
+    href: "/#work",
+    children: [
+      {
+        label: t("nav.workSub.companies"),
+        subLabel: t("nav.workSub.companiesDesc"),
+        href: "/#work",
+      },
+      {
+        label: t("nav.workSub.projects"),
+        subLabel: t("nav.workSub.projectsDesc"),
+      },
+    ],
+  },
+  {
+    label: t("nav.contact"),
+    href: "mailto:iltonandrew+contato@gmail.com",
+  },
+];
+
 const DesktopNav = () => {
+  const { t } = useTranslation("common");
   const linkColor = useColorModeValue("gray.600", "gray.200");
   // const linkHoverColor = useColorModeValue("brand.primary", "brand.primary");
   const popoverContentBgColor = useColorModeValue("white", "gray.900");
 
   return (
     <Stack direction={"row"} spacing={4}>
-      {NAV_ITEMS.map((navItem) => (
+      {getTranslatedNavItems(t).map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
@@ -194,13 +225,14 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 };
 
 const MobileNav = () => {
+  const { t } = useTranslation("common");
   return (
     <Stack
       bg={useColorModeValue("white", "gray.800")}
       p={4}
       display={{ md: "none" }}
     >
-      {NAV_ITEMS.map((navItem) => (
+      {getTranslatedNavItems(t).map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
     </Stack>
@@ -267,40 +299,4 @@ interface NavItem {
   href?: string;
 }
 
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: "Quem sou",
-    href: "/#about",
-    // children: [
-    //   {
-    //     label: "Explore Design Work",
-    //     subLabel: "Trending Design to inspire you",
-    //     href: "#",
-    //   },
-    //   {
-    //     label: "New & Noteworthy",
-    //     subLabel: "Up-and-coming Designers",
-    //     href: "#",
-    //   },
-    // ],
-  },
-  {
-    label: "O que fiz até agora",
-    href: "/#work",
-    children: [
-      {
-        label: "Onde trabalhei",
-        subLabel: "Empresas que já impactei",
-        href: "/#work",
-      },
-      {
-        label: "Projetos",
-        subLabel: "O que já desenvolvi",
-      },
-    ],
-  },
-  {
-    label: "Entre em contato",
-    href: "mailto:iltonandrew+contato@gmail.com",
-  },
-];
+
