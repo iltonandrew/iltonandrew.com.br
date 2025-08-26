@@ -13,7 +13,7 @@ import { useTranslation } from "@/hooks/useTranslation";
 import Typewriter from "typewriter-effect";
 
 export default function Hero() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   return (
     <Stack
       direction={{ base: "column", md: "row" }}
@@ -43,8 +43,10 @@ export default function Hero() {
             <br />{" "}
             <Text color={"brand.primary"} as={"span"}>
               <Typewriter
+                key={locale} // This forces re-render when locale changes
                 options={{
                   cursor: "_",
+                  loop: true,
                 }}
                 onInit={(typewriter) => {
                   typewriter
@@ -55,6 +57,8 @@ export default function Hero() {
                     .pauseFor(1000)
                     .deleteChars(t("hero.typewriter.developer").length)
                     .typeString(t("hero.typewriter.builder"))
+                    .pauseFor(1000)
+                    .deleteChars(t("hero.typewriter.builder").length)
                     .start();
                 }}
               />
