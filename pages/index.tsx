@@ -1,15 +1,15 @@
-import type { NextPage } from "next";
-import { ToggleColorMode } from "../src/components/ToggleColorMode";
-import Head from "next/head";
-import Hero from "../src/components/Hero";
 import Companies from "@/components/Companies";
 import { Divider } from "@chakra-ui/react";
+import Head from "next/head";
+import Hero from "../src/components/Hero";
+import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
+import { ToggleColorMode } from "../src/components/ToggleColorMode";
 import { useTranslation } from "@/hooks/useTranslation";
 
 const Home: NextPage = () => {
   const { t, locale } = useTranslation();
-  
+
   return (
     <>
       <Head>
@@ -17,11 +17,14 @@ const Home: NextPage = () => {
       </Head>
       <NextSeo
         title="Ilton Andrew"
-        description={locale === "pt-BR" ? "Portifólio & Blog" : "Portfolio & Blog"}
+        description={
+          locale === "pt-BR" ? "Portifólio & Blog" : "Portfolio & Blog"
+        }
         openGraph={{
           url: "https://iltonandrew.com.br",
           title: "Ilton Andrew",
-          description: locale === "pt-BR" ? "Portifólio & Blog" : "Portfolio & Blog",
+          description:
+            locale === "pt-BR" ? "Portifólio & Blog" : "Portfolio & Blog",
           images: [
             {
               url: "/images/profile_photo.jpg",
