@@ -27,38 +27,38 @@
       "mediaHero": {
         "name": "Media Hero",
         "role": "Head of Software Engineering",
-        "period": "Fevereiro 2023",
-        "description": "Criei uma nova plataforma para integração e visualização de dados do zero, usando tecnologia de ponta, NextJS junto com TRPC e arquitetando o projeto desde o início, com Terraform como infraestrutura como código, para automatizar processos DevOps e aumentar a confiabilidade de nossos pipelines. Também trabalhei diretamente com a Equipe de Produto para projetar a plataforma, garantindo que nossa visão de produto fosse seguida e melhorando nossa experiência do usuário."
+        "period": "Fevereiro, 2023 - Presente",
+        "description": "Liderei um time multidisciplinar para construir uma plataforma de dados robusta que melhorou o acesso à informação para clientes e áreas internas. Entreguei uma plataforma em Next.js + tRPC + Prisma em 9 meses e gerenciei CI/CD e infraestrutura com Terraform no GCP. Conduzi melhorias de colaboração no Linear por meio de agentes de IA, elevando a produtividade do time. Desenhei uma UI coesa usando Ant Design, Shadcn e Tailwind, metrificando o engajamento com o PostHog. Também lancei o primeiro site institucional da empresa em Webflow, ampliando a presença online."
       },
       "xp": {
         "name": "XP Inc.",
         "role": "Treasury Software Engineer",
         "period": "Agosto, 2022 - Fevereiro, 2023",
-        "description": "Trabalhei na XP desenvolvendo ferramentas para melhorar o workflow e confiabilidade dos processos e na centralização de dados para nossas várias bases de dados e sistemas. Também trabalhei em um projeto web que visava mostrar em tempo real dados financeiros atuais das instituições, coletando constantemente feedback diretamente dos analistas, implementando e priorizando recursos que tornariam seu trabalho mais produtivo e assertivo."
+        "description": "Desenvolvi ferramentas que aumentaram a confiabilidade do fluxo de trabalho e centralizaram dados entre múltiplos sistemas e bases. Entreguei um dashboard web em tempo real para dados financeiros, coletando feedback direto de analistas para priorizar funcionalidades que aumentaram produtividade e confiança nas decisões."
       },
       "pipefy": {
         "name": "Pipefy",
         "role": "Jr. Software Engineer",
         "period": "Janeiro, 2021 - Julho, 2022",
-        "description": "Fiz parte do Young Guns Tech, um programa de Trainee que me permitiu transitar entre as áreas da empresa e conhecer o nosso produto e seus clientes. Ao longo da minha trajetória desenvolvi diversas features para a plataforma, a Share Inbox, a Form Hub, Guest Portal e na área de Product Led Growth melhorando a conversão da plataforma através da melhora da usabilidade e FTUE. Durante meu tempo no PLG, trabalhei de perto com nossos designers para desenvolver vários testes A/B para aumentar nossa conversão na plataforma. Trabalhei com TypeScript, React, GraphQL, Ruby on Rails, Elixir e outras tecnologias."
+        "description": "Egresso do programa de trainees Young Guns Tech, atuei em diferentes equipes para conhecer o produto e os clientes. Entreguei funcionalidades como Share Inbox, Form Hub e Guest Portal. No time de PLG, aumentei a conversão ao melhorar usabilidade e FTUE, conduzindo testes A/B iterativos com design. Stack: TypeScript, React, GraphQL, Ruby on Rails e Elixir."
       },
       "xpIntern": {
         "name": "XP Inc.",
         "role": "Summer Intern",
         "period": "Dezembro, 2019 - Fevereiro, 2020",
-        "description": "Trabalhei no Project Squad, onde desenvolvi um portal baseado em Django para monitoramento de performance de fundos, desenvolvi dashboards dos fundos em Power BI integrando com o Portal e também desenvolvi uma série de automatizações para melhorar a qualidade de vida dos membros da área, além de gerenciar e testar atualizações de plataformas da área."
+        "description": "No Project Squad, desenvolvi um portal em Django para monitorar a performance de fundos, integrei dashboards em Power BI e implementei automações que melhoraram a eficiência do time. Apoiei o gerenciamento e a validação de atualizações de plataformas."
       },
       "adp": {
         "name": "Amigos da Poli",
         "role": "Tech Volunteer",
         "period": "Setembro, 2019 - Dezembro, 2020",
-        "description": "Desenvolvi o site do Edital de Projetos de 2020, utilizando Angular, e desenvolvi o novo site da Marca com CMS utilizando as tecnologias React e Gatsby. O novo site foi crucial para aumentar a conversão e doações para o fundo, para o Mês de Doar, desenvolvi uma dashboard que exibia em tempo real o número de doações de forma gamificada, o que aumentou o engajamento dos doadores durante o evento."
+        "description": "Criei o site do Edital de Projetos 2020 (Angular) e lancei o novo site institucional com CMS em React/Gatsby. O novo site aumentou conversões e doações; no Mês de Doar, desenvolvi um dashboard em tempo real e gamificado que elevou o engajamento dos doadores."
       },
       "poliJunior": {
         "name": "Poli Júnior",
         "role": "Software Engineer",
         "period": "Novembro, 2018 - Janeiro, 2021",
-        "description": "Desenvolvi aplicações customizadas para diversos clientes utilizando Django, React, React Native e NodeJS. Introduzi e ensinei as tecnologias React, React Native e NodeJS, bem como noções de Arquitetura de Software para a empresa a fim de melhorar a qualidade de nossos projetos. Também tive a oportunidade de organizar o Workshop Integrativo, a maior feira de recrutamento da América Latina. Para melhorar o desempenho do evento, desenvolvi com uma equipe um projeto de sistema de informação baseado em Django, responsável por digitalizar e centralizar os dados da feira. Durante o evento, desenvolvi um ChatBot do WhatsApp para otimizar conversões e tráfego do evento."
+        "description": "Entreguei sistemas sob medida para clientes com Django, React, React Native e Node.js. Introduzi e treinei o time em tecnologias web modernas e práticas de arquitetura de software. Co‑organizei o Workshop Integrativo, a maior feira de recrutamento da América Latina; criei um sistema de informações em Django para digitalizar e centralizar os dados da feira e um chatbot de WhatsApp que aumentou conversões e tráfego."
       }
     },
     "sideProjects": {
