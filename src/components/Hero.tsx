@@ -7,15 +7,17 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import Link from "next/link";
 
+import Link from "next/link";
 import Typewriter from "typewriter-effect";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Hero() {
+  const { t, locale } = useTranslation();
   return (
     <Stack
       direction={{ base: "column", md: "row" }}
-      height={useBreakpointValue({ base: "auto", md: "100vh" })}
+      height={{ base: "auto", md: "100vh" }}
       p={16}
       id="#about"
     >
@@ -41,28 +43,29 @@ export default function Hero() {
             <br />{" "}
             <Text color={"brand.primary"} as={"span"}>
               <Typewriter
+                key={locale} // This forces re-render when locale changes
                 options={{
                   cursor: "_",
+                  loop: true,
                 }}
                 onInit={(typewriter) => {
                   typewriter
-
-                    .typeString("Eu sou um Engenheiro.")
+                    .typeString(t("hero.typewriter.engineer"))
                     .pauseFor(1000)
-                    .deleteChars(11)
-                    .typeString("Desenvolvedor.")
+                    .deleteChars(t("hero.typewriter.engineer").length)
+                    .typeString(t("hero.typewriter.developer"))
                     .pauseFor(1000)
-                    .deleteChars(21)
-                    .typeString("construo coisas para a web.")
+                    .deleteChars(t("hero.typewriter.developer").length)
+                    .typeString(t("hero.typewriter.builder"))
+                    .pauseFor(1000)
+                    .deleteChars(t("hero.typewriter.builder").length)
                     .start();
                 }}
               />
             </Text>{" "}
           </Heading>
           <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
-            Formado em Engenharia Elétrica e de Computação pela Escola
-            Politécnica da Universidade de São Paulo, atualmente se aventurando
-            no mundo da Engenharia de Software.
+            {t("hero.description")}
           </Text>
           <Stack direction={{ base: "column", md: "row" }} spacing={4}>
             <Link href="#work" scroll={false}>
@@ -74,12 +77,12 @@ export default function Hero() {
                   bg: "brand.secondary",
                 }}
               >
-                Onde trabalhei
+                {t("nav.workSub.companies")}
               </Button>
             </Link>
 
             <Link href="mailto:iltonandrew+contato@gmail.com">
-              <Button rounded={"full"}>Entre em contato</Button>
+              <Button rounded={"full"}>{t("nav.contact")}</Button>
             </Link>
           </Stack>
         </Stack>
@@ -90,6 +93,8 @@ export default function Hero() {
           objectFit={"cover"}
           alt={"My photo"}
           src={"/images/profile_photo.jpg"}
+          boxSize={{ base: "240px", md: "360px", lg: "460px" }}
+          shadow="2xl"
         />
       </Flex>
     </Stack>
