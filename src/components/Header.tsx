@@ -1,29 +1,29 @@
 import {
   Box,
-  Flex,
-  Text,
-  IconButton,
   Button,
-  Stack,
   Collapse,
+  Flex,
   Icon,
+  IconButton,
+  Img,
   Link,
   Popover,
-  PopoverTrigger,
   PopoverContent,
+  PopoverTrigger,
+  Stack,
+  Text,
   useColorModeValue,
   useDisclosure,
-  Img,
 } from "@chakra-ui/react";
 import {
-  HamburgerIcon,
-  CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  CloseIcon,
+  HamburgerIcon,
 } from "@chakra-ui/icons";
-import { ToggleColorMode } from "./ToggleColorMode";
-import LanguageSwitcher from "./LanguageSwitcher";
 
+import LanguageSwitcher from "./LanguageSwitcher";
+import { ToggleColorMode } from "./ToggleColorMode";
 import { useRouter } from "next/router";
 import { useTranslation } from "@/hooks/useTranslation";
 
@@ -298,5 +298,3 @@ interface NavItem {
   children?: Array<NavItem>;
   href?: string;
 }
-
-
