@@ -1,6 +1,7 @@
-import { Button, HStack, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+
+import { Box } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
 
 export default function LanguageSwitcher() {
   const router = useRouter();
@@ -15,22 +16,48 @@ export default function LanguageSwitcher() {
     router.push(router.asPath, router.asPath, { locale: newLocale });
   };
 
+  const flagSrc =
+    currentLocale === "pt-BR" ? "/images/flags/us.png" : "/images/flags/br.png";
+  const ariaLabel =
+    currentLocale === "pt-BR" ? "Switch to English" : "Mudar para Português";
+
+  const iconEl = (
+    <Box
+      w="20px"
+      h="20px"
+      borderRadius="4px"
+      bgImage={`url(${flagSrc})`}
+      bgSize="cover"
+      bgPos="center"
+    />
+  );
+
   return (
-    <Button
+    <button
       onClick={toggleLanguage}
-      variant="outline"
-      size="sm"
-      colorScheme="brand"
-      _hover={{
-        bg: "brand.primary",
-        color: "white",
+      aria-label={ariaLabel}
+      style={{
+        width: 40,
+        height: 40,
+        minWidth: 40,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 0,
+        border: "none",
+        background: "transparent",
+        borderRadius: 8,
+        cursor: "pointer",
+      }}
+      onMouseOver={(e) => {
+        (e.currentTarget as HTMLButtonElement).style.background =
+          "rgba(255,255,255,0.12)";
+      }}
+      onMouseOut={(e) => {
+        (e.currentTarget as HTMLButtonElement).style.background = "transparent";
       }}
     >
-      <HStack spacing={1}>
-        <Text fontSize="sm" fontWeight="medium">
-          {currentLocale === "pt-BR" ? "EN" : "PT"}
-        </Text>
-      </HStack>
-    </Button>
+      {iconEl}
+    </button>
   );
 }

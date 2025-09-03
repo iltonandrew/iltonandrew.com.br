@@ -1,6 +1,13 @@
-import { Stack, Text, Img, keyframes, Link } from "@chakra-ui/react";
-
-import { useState, useRef, useEffect } from "react";
+import {
+  Box,
+  Img,
+  Link,
+  Stack,
+  Text,
+  keyframes,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { useEffect, useRef, useState } from "react";
 
 import { useIntersectionObserver } from "@/hooks";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -28,6 +35,12 @@ export default function Company({
   const ref = useRef<HTMLDivElement | null>(null);
   const entry = useIntersectionObserver(ref, {});
   const isVisible = !!entry?.isIntersecting;
+  const defaultSrc = `/images/companies/${image}`;
+  const mediaHeroSrc = useColorModeValue(
+    "/images/companies/media-hero-black.svg",
+    "/images/companies/media-hero.svg"
+  );
+  const logoSrc = image.includes("media-hero") ? mediaHeroSrc : defaultSrc;
 
   const animationKeyframes = keyframes`
   0% {transform: translateX(-50%); opacity: 0; }
@@ -50,12 +63,36 @@ export default function Company({
         animation={isVisible && !hasBeenVisible ? animation : undefined}
         direction="row"
         p={8}
+        align="center"
       >
-        <Img src={`"../../images/companies/${image}`} alt={name} maxH="75px" />
+        {image && (
+          <Box
+            w="84px"
+            h="84px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            flexShrink={0}
+          >
+            <Img
+              src={logoSrc}
+              alt={name}
+              h="75px"
+              maxW="100%"
+              objectFit="contain"
+            />
+          </Box>
+        )}
         <Stack direction="column" pl={4}>
           {link ? (
             <Link href={link} isExternal>
-              <Text fontWeight={"bold"} fontSize="xl" marginBottom={"-2"} color="brand.primary" _hover={{ textDecoration: "underline" }}>
+              <Text
+                fontWeight={"bold"}
+                fontSize="xl"
+                marginBottom={"-2"}
+                color="brand.primary"
+                _hover={{ textDecoration: "underline" }}
+              >
                 {name}
               </Text>
             </Link>
@@ -69,7 +106,9 @@ export default function Company({
             {data}
           </Text>
           <Text fontSize={"xs"}>{description}</Text>
-          <Text fontSize={"xs"}>{t("work.workedWith")} {stack}</Text>
+          <Text fontSize={"xs"}>
+            {t("work.workedWith")} {stack}
+          </Text>
         </Stack>
       </Stack>
     </>

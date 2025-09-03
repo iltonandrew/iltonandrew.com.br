@@ -7,17 +7,17 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import Link from "next/link";
-import { useTranslation } from "@/hooks/useTranslation";
 
+import Link from "next/link";
 import Typewriter from "typewriter-effect";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Hero() {
   const { t, locale } = useTranslation();
   return (
     <Stack
       direction={{ base: "column", md: "row" }}
-      height={useBreakpointValue({ base: "auto", md: "100vh" })}
+      height={{ base: "auto", md: "100vh" }}
       p={16}
       id="#about"
     >
@@ -93,6 +93,8 @@ export default function Hero() {
           objectFit={"cover"}
           alt={"My photo"}
           src={"/images/profile_photo.jpg"}
+          boxSize={{ base: "240px", md: "360px", lg: "460px" }}
+          shadow="2xl"
         />
       </Flex>
     </Stack>

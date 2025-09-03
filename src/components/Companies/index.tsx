@@ -1,4 +1,5 @@
-import { Stack, Container, Divider, Heading } from "@chakra-ui/react";
+import { Container, Divider, Heading, Stack } from "@chakra-ui/react";
+
 import CompanyListItem from "./CompanyListItem";
 import DownloadButton from "./DownloadButton";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -66,7 +67,7 @@ export default function Companies() {
         />
         <Divider />
       </Stack>
-      
+
       {/* Side Projects Section */}
       <Heading size="lg" mb={4} ml={8} mt={8} color={"brand.primary"}>
         {t("work.sideProjects.title")}
@@ -75,14 +76,14 @@ export default function Companies() {
         <CompanyListItem
           name={t("work.sideProjects.converter.name")}
           role={t("work.sideProjects.personalProject")}
-          data="2023"
-          image=""
+          data="2025"
+          image="converter-gege-codes.svg"
           description={t("work.sideProjects.converter.description")}
           stack="NextJS, TypeScript, Tailwind CSS"
           link={t("work.sideProjects.converter.link")}
         />
       </Stack>
-      
+
       <DownloadButton />
     </Container>
   );

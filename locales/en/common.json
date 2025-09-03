@@ -65,8 +65,8 @@
       "title": "Side Projects",
       "personalProject": "Personal Project",
       "converter": {
-        "name": "Converter.gege.codes",
-        "description": "An online tool for converting different data formats and units of measurement.",
+        "name": "converter.gege.codes",
+        "description": "Transform your images between JPG, PNG, and AVIF formats with our lightning-fast, secure converter. No uploads required - everything happens in your browser.",
         "link": "https://converter.gege.codes/"
       }
     }
@@ -78,5 +78,8 @@
   },
   "footer": {
     "madeWith": "Made with ❤️ by Ilton Andrew"
+  },
+  "resume": {
+    "download": "Download Resume"
   }
 }

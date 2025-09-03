@@ -65,8 +65,8 @@
       "title": "Projetos Pessoais",
       "personalProject": "Projeto Pessoal",
       "converter": {
-        "name": "Converter.gege.codes",
-        "description": "Uma ferramenta online para conversão de diferentes formatos de dados e unidades de medida.",
+        "name": "converter.gege.codes",
+        "description": "Transforme suas imagens entre JPG, PNG e AVIF com nosso conversor ultrarrápido e seguro. Sem uploads — tudo acontece no seu navegador.",
         "link": "https://converter.gege.codes/"
       }
     }
@@ -78,5 +78,8 @@
   },
   "footer": {
     "madeWith": "Feito com ❤️ por Ilton Andrew"
+  },
+  "resume": {
+    "download": "Baixar Currículo"
   }
 }
