@@ -82,6 +82,15 @@ export default function Companies() {
           stack="NextJS, TypeScript, Tailwind CSS"
           link={t("work.sideProjects.converter.link")}
         />
+        <CompanyListItem
+          name={t("work.sideProjects.zoroscopo.name")}
+          role={t("work.sideProjects.personalProject")}
+          data="2025"
+          image="zoroscopo.svg"
+          description={t("work.sideProjects.zoroscopo.description")}
+          stack="NextJS, TypeScript, AI, OpenAI"
+          link={t("work.sideProjects.zoroscopo.link")}
+        />
       </Stack>
 
       <DownloadButton />
