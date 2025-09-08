@@ -72,8 +72,7 @@
       "zoroscopo": {
         "name": "Zoroscopo",
         "description": "Aplicativo de astrologia com IA que gera insights personalizados do mapa astral e orientações diárias a partir dos seus dados de nascimento.",
-        "link": "https://zoroscopo.vercel.app/",
-        "github": "https://github.com/iltonandrew/zoroscopo"
+        "link": "https://zoroscopo.vercel.app/"
       }
     }
   },

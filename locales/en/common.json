@@ -72,8 +72,7 @@
       "zoroscopo": {
         "name": "Zoroscopo",
         "description": "AI-powered astrology app that generates personalized birth‑chart insights and daily guidance from your birth data.",
-        "link": "https://zoroscopo.vercel.app/",
-        "github": "https://github.com/iltonandrew/zoroscopo"
+        "link": "https://zoroscopo.vercel.app/"
       }
     }
   },
