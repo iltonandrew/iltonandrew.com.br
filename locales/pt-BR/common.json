@@ -68,6 +68,12 @@
         "name": "converter.gege.codes",
         "description": "Transforme suas imagens entre JPG, PNG e AVIF com nosso conversor ultrarrápido e seguro. Sem uploads — tudo acontece no seu navegador.",
         "link": "https://converter.gege.codes/"
+      },
+      "zoroscopo": {
+        "name": "Zoroscopo",
+        "description": "Uma aplicação de horóscopo moderna e intuitiva que oferece insights astrológicos e previsões diárias. Construída com tecnologias web de ponta, proporciona leituras personalizadas baseadas em signos do zodíaco com uma interface bonita e responsiva.",
+        "link": "https://zoroscopo.vercel.app/",
+        "github": "https://github.com/iltonandrew/zoroscopo"
       }
     }
   },

@@ -20,6 +20,7 @@ type CompanyProps = {
   description: string;
   stack: string;
   link?: string;
+  github?: string;
 };
 
 export default function Company({
@@ -30,6 +31,7 @@ export default function Company({
   description,
   stack,
   link,
+  github,
 }: CompanyProps) {
   const { t } = useTranslation();
   const ref = useRef<HTMLDivElement | null>(null);
@@ -84,23 +86,36 @@ export default function Company({
           </Box>
         )}
         <Stack direction="column" pl={4}>
-          {link ? (
-            <Link href={link} isExternal>
-              <Text
-                fontWeight={"bold"}
-                fontSize="xl"
-                marginBottom={"-2"}
-                color="brand.primary"
-                _hover={{ textDecoration: "underline" }}
-              >
+          <Stack direction="row" align="center" spacing={2}>
+            {link ? (
+              <Link href={link} isExternal>
+                <Text
+                  fontWeight={"bold"}
+                  fontSize="xl"
+                  marginBottom={"-2"}
+                  color="brand.primary"
+                  _hover={{ textDecoration: "underline" }}
+                >
+                  {name}
+                </Text>
+              </Link>
+            ) : (
+              <Text fontWeight={"bold"} fontSize="xl" marginBottom={"-2"}>
                 {name}
               </Text>
-            </Link>
-          ) : (
-            <Text fontWeight={"bold"} fontSize="xl" marginBottom={"-2"}>
-              {name}
-            </Text>
-          )}
+            )}
+            {github && (
+              <Link href={github} isExternal>
+                <Text
+                  fontSize="sm"
+                  color="gray.500"
+                  _hover={{ color: "brand.primary", textDecoration: "underline" }}
+                >
+                  GitHub
+                </Text>
+              </Link>
+            )}
+          </Stack>
           <Text>{role}</Text>
           <Text fontStyle={"italic"} fontSize={"2xs"}>
             {data}
