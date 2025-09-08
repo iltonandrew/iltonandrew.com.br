@@ -65,14 +65,16 @@
       "title": "Projetos Pessoais",
       "personalProject": "Projeto Pessoal",
       "converter": {
-        "name": "converter.gege.codes",
-        "description": "Transforme suas imagens entre JPG, PNG e AVIF com nosso conversor ultrarrápido e seguro. Sem uploads — tudo acontece no seu navegador.",
-        "link": "https://converter.gege.codes/"
+        "name": "Gege Converter",
+        "description": "Conversor de imagens ultrarrápido e com privacidade em primeiro lugar (JPG, PNG, AVIF), com processamento em lote e controle de qualidade. Sem uploads — tudo roda no seu navegador.",
+        "link": "https://converter.gege.codes/",
+        "stack": "Next.js, React, TypeScript, Tailwind CSS, Sharp (processamento de imagens), pdf-lib (ferramentas de PDF), i18n, Next Metadata SEO, AdSense, Jest + Testing Library, ESLint, Vercel para hospedagem"
       },
       "zoroscopo": {
         "name": "Zoroscopo",
-        "description": "Aplicativo de astrologia com IA que gera insights personalizados do mapa astral e orientações diárias a partir dos seus dados de nascimento.",
-        "link": "https://zoroscopo.vercel.app/"
+        "description": "Leituras astrológicas com IA, privacidade em primeiro lugar, em português do Brasil, que validam rigorosamente signo solar, ascendente, casas, influências planetárias e trânsitos atuais.",
+        "link": "https://zoroscopo.vercel.app/",
+        "stack": "Next.js, React, TypeScript, Tailwind CSS, shadcn/ui (Radix), tRPC, TanStack Query, Zod, Prisma + PostgreSQL (Neon), Resend (link mágico), Google Generative AI (Gemini 2.5) via ai SDK, OpenStreetMap Nominatim (geocodificação), Vercel para hospedagem"
       }
     }
   },
