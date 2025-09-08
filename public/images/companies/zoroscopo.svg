@@ -1,0 +1,31 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="spaceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1f3b"/>
+      <stop offset="100%" stop-color="#0b0e1a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8aa9ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8aa9ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="32" height="32" rx="6" fill="url(#spaceGradient)"/>
+
+  <!-- Subtle center glow -->
+  <circle cx="16" cy="16" r="10" fill="url(#glow)"/>
+
+  <!-- Constellation lines (simple zodiac-inspired shape) -->
+  <path d="M7 20 L13 13 L19 15 L25 9" stroke="#8aa9ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+
+  <!-- Stars -->
+  <circle cx="7" cy="20" r="1.2" fill="#c8d4ff"/>
+  <circle cx="13" cy="13" r="1.4" fill="#ffffff"/>
+  <circle cx="19" cy="15" r="1.1" fill="#c8d4ff"/>
+  <circle cx="25" cy="9" r="1.6" fill="#ffffff"/>
+
+  <!-- Crescent moon -->
+  <g transform="translate(20,20)">
+    <circle cx="0" cy="0" r="4" fill="#ffd27d"/>
+    <circle cx="1.8" cy="-0.8" r="4" fill="url(#spaceGradient)"/>
+  </g>
+</svg>

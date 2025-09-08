@@ -65,9 +65,16 @@
       "title": "Side Projects",
       "personalProject": "Personal Project",
       "converter": {
-        "name": "converter.gege.codes",
-        "description": "Transform your images between JPG, PNG, and AVIF formats with our lightning-fast, secure converter. No uploads required - everything happens in your browser.",
-        "link": "https://converter.gege.codes/"
+        "name": "Gege Converter",
+        "description": "Ultrafast, privacy-first image converter (JPG, PNG, AVIF) with batch processing and quality control. No uploads—everything runs in your browser.",
+        "link": "https://converter.gege.codes/",
+        "stack": "Next.js, React, TypeScript, TailwindCSS, Sharp (image processing), pdf-lib (PDF tools), i18n, Next Metadata SEO, AdSense, Jest + Testing Library, ESLint, Vercel for hosting"
+      },
+      "zoroscopo": {
+        "name": "Zoroscopo",
+        "description": "AI-powered, privacy-first astrological readings in Brazilian Portuguese that rigorously validate solar sign, ascendant, houses, planetary influences, and current transits.",
+        "link": "https://zoroscopo.vercel.app/",
+        "stack": "Next.js, React, TypeScript, Tailwind CSS, shadcn/ui (Radix), tRPC, TanStack Query, Zod, Prisma + PostgreSQL (Neon), Resend (magic link), Google Generative AI (Gemini 2.5) via ai SDK, OpenStreetMap Nominatim (geocoding), Vercel for hosting"
       }
     }
   },

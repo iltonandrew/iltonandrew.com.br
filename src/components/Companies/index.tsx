@@ -79,8 +79,17 @@ export default function Companies() {
           data="2025"
           image="converter-gege-codes.svg"
           description={t("work.sideProjects.converter.description")}
-          stack="NextJS, TypeScript, Tailwind CSS"
+          stack={t("work.sideProjects.converter.stack")}
           link={t("work.sideProjects.converter.link")}
+        />
+        <CompanyListItem
+          name={t("work.sideProjects.zoroscopo.name")}
+          role={t("work.sideProjects.personalProject")}
+          data="2025"
+          image="zoroscopo.svg"
+          description={t("work.sideProjects.zoroscopo.description")}
+          stack={t("work.sideProjects.zoroscopo.stack")}
+          link={t("work.sideProjects.zoroscopo.link")}
         />
       </Stack>
 
