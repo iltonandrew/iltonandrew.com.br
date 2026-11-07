@@ -1,0 +1,55 @@
+---
+import Base from "./Base.astro";
+import { asLocale, otherLocale, useTranslations, localePath } from "../i18n";
+import { formatDate, getPosts, postPath, postSlug, readingMinutes, type Post } from "../lib/posts";
+
+interface Props {
+  entry: Post;
+}
+const { entry } = Astro.props;
+const locale = asLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+const { title, summary, date, tags, image } = entry.data;
+const slug = postSlug(entry);
+const other = otherLocale(locale);
+const hasOther = (await getPosts(other)).some((p) => postSlug(p) === slug);
+const otherLabel = other === "en" ? "Read in English" : "Ler em português";
+const ogImage = typeof image === "string" ? image : image?.src;
+---
+
+<Base title={title} description={summary} type="article" image={ogImage}>
+  <div class="container">
+    <article class="prose">
+      <h1>{title}</h1>
+      <p class="meta">
+        {t("blog.publishedOn")}{" "}<time datetime={date.toISOString()}>{formatDate(date, locale)}</time> · {readingMinutes(entry.body)}{" "}{t("blog.readingTime")}
+      </p>
+      {tags.length > 0 && <ul class="tags" aria-label={t("blog.tags")}>{tags.map((tag) => <li>{tag}</li>)}</ul>}
+      <slot />
+    </article>
+    <p class="nav">
+      <a href={localePath(locale, "/blog")}>← {t("blog.backToList")}</a>
+      {hasOther && <a href={postPath(other, slug)} hreflang={other} lang={other}>{otherLabel}</a>}
+    </p>
+  </div>
+</Base>
+
+<style is:global>
+  .prose { max-width: 70ch; margin-inline: auto; line-height: 1.7; overflow-wrap: break-word; }
+  .prose .meta { color: var(--fg-muted); font-size: 0.875rem; }
+  .prose .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; }
+  .prose .tags li { font-size: 0.75rem; padding: 0.1rem 0.5rem; border: 1px solid var(--border); border-radius: 999px; color: var(--fg-muted); }
+  .prose h2, .prose h3, .prose h4 { margin: 2rem 0 0.75rem; line-height: 1.25; }
+  .prose a { color: var(--accent); }
+  .prose img, .prose video { max-width: 100%; height: auto; border-radius: var(--radius); }
+  .prose pre { overflow-x: auto; padding: 1rem; border-radius: var(--radius); background: var(--bg-elev); border: 1px solid var(--border); font-size: 0.875rem; line-height: 1.5; }
+  .prose :not(pre) > code { background: var(--bg-elev); padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.9em; }
+  .prose blockquote { margin-inline: 0; padding-left: 1rem; border-left: 3px solid var(--border); color: var(--fg-muted); }
+  .prose .video { position: relative; aspect-ratio: 16 / 9; margin-block: 1.5rem; }
+  .prose .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: var(--radius); }
+</style>
+<style>
+  .nav { max-width: 70ch; margin: 2rem auto 0; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .nav a { color: var(--accent); }
+  .container { padding-block: 2rem; }
+</style>

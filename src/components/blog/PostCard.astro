@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import { useTranslations, type Locale } from "../../i18n";
+import { formatDate, postPath, postSlug, readingMinutes, type Post } from "../../lib/posts";
+
+interface Props {
+  entry: Post;
+  locale: Locale;
+}
+const { entry, locale } = Astro.props;
+const t = useTranslations(locale);
+const { title, summary, date, tags, image } = entry.data;
+---
+
+<article class="card">
+  {
+    image && (
+      <a href={postPath(locale, postSlug(entry))} tabindex="-1" aria-hidden="true">
+        {typeof image === "string" ? (
+          <img src={image} alt="" loading="lazy" width="800" height="450" />
+        ) : (
+          <Image src={image} alt="" loading="lazy" widths={[400, 800]} sizes="(min-width: 700px) 220px, 100vw" />
+        )}
+      </a>
+    )
+  }
+  <div class="body">
+    <h2><a href={postPath(locale, postSlug(entry))}>{title}</a></h2>
+    <p class="meta">
+      <time datetime={date.toISOString()}>{formatDate(date, locale)}</time> · {readingMinutes(entry.body)}{" "}{t("blog.readingTime")}
+    </p>
+    {tags.length > 0 && <ul class="tags" aria-label={t("blog.tags")}>{tags.map((tag) => <li>{tag}</li>)}</ul>}
+    <p>{summary}</p>
+  </div>
+</article>
+
+<style>
+  .card { display: grid; gap: 1rem; padding: 1rem; background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); }
+  @media (min-width: 700px) { .card:has(img) { grid-template-columns: 220px 1fr; } }
+  img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: calc(var(--radius) / 2); }
+  h2 { margin: 0 0 0.25rem; font-size: 1.25rem; }
+  h2 a { color: var(--fg); text-decoration: none; }
+  h2 a:hover { color: var(--accent); }
+  .meta { color: var(--fg-muted); font-size: 0.875rem; margin: 0 0 0.5rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: 0 0 0.5rem; }
+  .tags li { font-size: 0.75rem; padding: 0.1rem 0.5rem; border: 1px solid var(--border); border-radius: 999px; color: var(--fg-muted); }
+  p { margin: 0; }
+</style>

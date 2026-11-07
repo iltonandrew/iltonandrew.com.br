@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "siteDescription": "Ilton Andrew — Senior Software Engineer na McKinsey & Company / QuantumBlack. Portfólio, experiência e blog.",
+    "blogDescription": "Notas sobre engenharia de software, produto e liderança técnica, por Ilton Andrew."
+  },
+  "nav": {
+    "about": "Quem sou",
+    "work": "Experiência",
+    "projects": "Projetos",
+    "contact": "Entre em contato",
+    "skipToContent": "Pular para o conteúdo"
+  },
+  "hero": {
+    "title": "Olá, eu sou o Ilton Andrew",
+    "subtitle": "Senior Software Engineer na McKinsey & Company / QuantumBlack",
+    "description": "Engenheiro que passou três anos e meio construindo produto e time de engenharia do zero em uma startup em crescimento acelerado, hoje no time de tecnologia da QuantumBlack, AI by McKinsey. Interessado nas perguntas de negócio, de pessoas e de tempo que existem por baixo dos problemas técnicos.",
+    "typewriter": {
+      "engineer": "Engenheiro",
+      "developer": "Desenvolvedor",
+      "builder": "construo coisas para a web"
+    },
+    "ctaWork": "Onde trabalhei",
+    "ctaContact": "Entre em contato"
+  },
+  "work": {
+    "title": "Experiência Profissional",
+    "workedWith": "Trabalhei com:",
+    "present": "Presente",
+    "companies": {
+      "mckinsey": {
+        "name": "McKinsey & Company · QuantumBlack, AI by McKinsey",
+        "role": "Senior Software Engineer II",
+        "period": "Setembro de 2026 – Presente",
+        "location": "São Paulo, Brasil",
+        "description": "Engenheiro de software no time de tecnologia da QuantumBlack, AI by McKinsey, construindo software para projetos de clientes em contextos onde a tecnologia é o meio, não o fim. O mesmo trabalho de engenharia, em escala maior e com mais variedade de problemas.",
+        "stack": "TypeScript, Python, Cloud, IA"
+      },
+      "mediaHero": {
+        "name": "Media Hero",
+        "role": "Head of Software Engineering",
+        "period": "Fevereiro de 2023 – Setembro de 2026",
+        "location": "São Paulo, Brasil",
+        "description": "Entrei quando a empresa era três pessoas e saí com ela em torno de 90, com um time de engenharia que se sustenta sozinho e um produto que aguentou cada virada de crescimento. Construí a plataforma de dados desde as primeiras linhas de código: plataforma em Next.js + tRPC + Prisma entregue em 9 meses, CI/CD e infraestrutura com Terraform no GCP, UI coesa com Ant Design, shadcn e Tailwind, analytics de produto com PostHog. Fiz as primeiras contratações, criei os processos de engenharia e lancei o primeiro site institucional da empresa em Webflow.",
+        "stack": "Next.js, tRPC, Prisma, Terraform, GCP, PostHog"
+      },
+      "xp": {
+        "name": "XP Inc.",
+        "role": "Treasury Software Engineer",
+        "period": "Agosto de 2022 – Fevereiro de 2023",
+        "location": "São Paulo, Brasil",
+        "description": "Desenvolvi ferramentas que aumentaram a confiabilidade do fluxo de trabalho e centralizaram dados entre múltiplos sistemas e bases. Entreguei um dashboard web em tempo real para dados financeiros, coletando feedback direto de analistas para priorizar funcionalidades que aumentaram produtividade e confiança nas decisões.",
+        "stack": "Python, Go, SQL, dados em tempo real"
+      },
+      "pipefy": {
+        "name": "Pipefy",
+        "role": "Software Engineer",
+        "period": "Janeiro de 2021 – Julho de 2022",
+        "location": "São Paulo, Brasil",
+        "description": "Egresso do programa de trainees Young Guns Tech, atuei em diferentes equipes para conhecer o produto e os clientes. Entreguei funcionalidades como Share Inbox, Form Hub e Guest Portal. No time de PLG, aumentei a conversão ao melhorar usabilidade e FTUE, conduzindo testes A/B iterativos com design.",
+        "stack": "TypeScript, React, GraphQL, Ruby on Rails, Elixir"
+      },
+      "xpIntern": {
+        "name": "XP Asset Management",
+        "role": "Estagiário de Projetos de TI",
+        "period": "Dezembro de 2019 – Fevereiro de 2020",
+        "location": "São Paulo, Brasil",
+        "description": "No Project Squad, desenvolvi um portal em Django para monitorar a performance de fundos, integrei dashboards em Power BI e implementei automações que melhoraram a eficiência do time. Apoiei o gerenciamento e a validação de atualizações de plataformas.",
+        "stack": "Python, Django, Power BI, SQL"
+      },
+      "adp": {
+        "name": "Amigos da Poli",
+        "role": "Voluntário de Tecnologia",
+        "period": "Setembro de 2019 – Dezembro de 2020",
+        "location": "São Paulo, Brasil",
+        "description": "Criei o site do Edital de Projetos 2020 (Angular) e lancei o novo site institucional com CMS em React/Gatsby. O novo site aumentou conversões e doações; no Mês de Doar, desenvolvi um dashboard em tempo real e gamificado que elevou o engajamento dos doadores.",
+        "stack": "Angular, React, Gatsby, CMS"
+      },
+      "poliJunior": {
+        "name": "Poli Júnior",
+        "role": "Software Engineer",
+        "period": "Novembro de 2018 – Março de 2021",
+        "location": "São Paulo, Brasil",
+        "description": "Entreguei sistemas sob medida para clientes com Django, React, React Native e Node.js. Introduzi e treinei o time em tecnologias web modernas e práticas de arquitetura de software. Co‑organizei o Workshop Integrativo, a maior feira de recrutamento da América Latina; criei um sistema de informações em Django para digitalizar e centralizar os dados da feira e um chatbot de WhatsApp que aumentou conversões e tráfego.",
+        "stack": "Python, Django, Node.js, React, React Native"
+      }
+    },
+    "sideProjects": {
+      "title": "Projetos Pessoais",
+      "personalProject": "Projeto Pessoal",
+      "converter": {
+        "name": "Gege Converter",
+        "year": "2025",
+        "description": "Conversor de imagens ultrarrápido e com privacidade em primeiro lugar (JPG, PNG, AVIF), com processamento em lote e controle de qualidade. Sem uploads — tudo roda no seu navegador.",
+        "link": "https://converter.gege.codes/",
+        "stack": "Next.js, React, TypeScript, Tailwind CSS, Sharp, pdf-lib, Vercel"
+      },
+      "zoroscopo": {
+        "name": "Zoroscopo",
+        "year": "2025",
+        "description": "Leituras astrológicas com IA, privacidade em primeiro lugar, em português do Brasil, que validam rigorosamente signo solar, ascendente, casas, influências planetárias e trânsitos atuais.",
+        "link": "https://zoroscopo.vercel.app/",
+        "stack": "Next.js, TypeScript, tRPC, Prisma + PostgreSQL, Gemini via AI SDK, Vercel"
+      }
+    }
+  },
+  "cv": {
+    "title": "Currículo",
+    "pageTitle": "Ilton Andrew — Currículo",
+    "summary": "Senior Software Engineer na McKinsey & Company / QuantumBlack. Antes, Head of Software Engineering na Media Hero, onde construí o produto e o time de engenharia das três primeiras pessoas até uma empresa de cerca de 90. Base em full-stack, cloud e liderança técnica.",
+    "contact": "Contato",
+    "website": "Site",
+    "email": "E-mail",
+    "experience": "Experiência",
+    "education": "Formação",
+    "certifications": "Certificações",
+    "skills": "Competências",
+    "languages": "Idiomas",
+    "awards": "Prêmios",
+    "educationEntries": {
+      "poli": {
+        "school": "Escola Politécnica da Universidade de São Paulo",
+        "degree": "Bacharelado em Engenharia Elétrica, ênfase em Engenharia de Computação",
+        "period": "Fevereiro de 2018 – Dezembro de 2022",
+        "description": "Participação em atividades de extensão, em especial a empresa júnior Poli Júnior e o fundo patrimonial Amigos da Poli."
+      }
+    },
+    "certificationEntries": {
+      "gcpAce": {
+        "name": "Associate Cloud Engineer",
+        "issuer": "Google Cloud",
+        "date": "Dezembro de 2024 (válida até dezembro de 2027)"
+      },
+      "msAmbassador": {
+        "name": "Microsoft Learn Student Ambassador",
+        "issuer": "Microsoft",
+        "date": "Outubro de 2021"
+      }
+    },
+    "skillGroups": {
+      "languages": "TypeScript, JavaScript, Python, Go, SQL",
+      "frontend": "React, Next.js, Astro, Tailwind CSS, shadcn/ui",
+      "backend": "Node.js, tRPC, Prisma, Django, GraphQL, Ruby on Rails, Elixir",
+      "cloud": "GCP, Terraform, CI/CD, Vercel, PostgreSQL",
+      "practices": "Design de sistemas, liderança técnica, analytics de produto, testes A/B"
+    },
+    "languageEntries": {
+      "pt": "Português — nativo",
+      "en": "Inglês — fluente"
+    },
+    "awardEntries": {
+      "visagio": "Hackathon Visagio — 1º lugar. Chatbot de WhatsApp em Node.js para verificação de fake news."
+    },
+    "print": "Imprimir / Salvar em PDF",
+    "downloadPdf": "Baixar PDF"
+  },
+  "blog": {
+    "title": "Blog",
+    "home": "Início",
+    "readMore": "Ler mais",
+    "empty": "Nenhum post ainda.",
+    "backToList": "Todos os posts",
+    "publishedOn": "Publicado em",
+    "readingTime": "min de leitura",
+    "tags": "Tags"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "A página que você procura não existe ou mudou de lugar.",
+    "backHome": "Voltar para o início"
+  },
+  "footer": {
+    "madeWith": "Feito com ❤️ por Ilton Andrew"
+  },
+  "resume": {
+    "download": "Baixar Currículo",
+    "view": "Ver currículo"
+  }
+}

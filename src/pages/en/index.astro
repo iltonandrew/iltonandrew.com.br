@@ -1,0 +1,8 @@
+---
+import Base from "../../layouts/Base.astro";
+import Home from "../../components/home/Home.astro";
+import { asLocale, useTranslations } from "../../i18n";
+const t = useTranslations(asLocale(Astro.currentLocale));
+---
+
+<Base title="Ilton Andrew" description={t("meta.siteDescription")}><Home /></Base>

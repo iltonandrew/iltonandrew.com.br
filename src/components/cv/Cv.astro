@@ -1,0 +1,132 @@
+---
+import { asLocale, useTranslations, localePath } from "../../i18n";
+
+const locale = asLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+const pdf = locale === "en" ? "/resumes/Ilton_Andrew-CV-EN.pdf" : "/resumes/Ilton_Andrew-CV-PT-BR.pdf";
+const companies = ["mckinsey", "mediaHero", "xp", "pipefy", "xpIntern", "adp", "poliJunior"];
+const skillLabels: Record<string, string> =
+  locale === "en"
+    ? { languages: "Languages", frontend: "Frontend", backend: "Backend", cloud: "Cloud", practices: "Practices" }
+    : { languages: "Linguagens", frontend: "Frontend", backend: "Backend", cloud: "Cloud", practices: "Práticas" };
+const contacts = [
+  { label: t("cv.website"), text: "iltonandrew.com.br", href: "https://iltonandrew.com.br" },
+  { label: t("cv.email"), text: "iltonandrew@gmail.com", href: "mailto:iltonandrew@gmail.com" },
+  { label: "GitHub", text: "github.com/iltonandrew", href: "https://github.com/iltonandrew" },
+  { label: "LinkedIn", text: "linkedin.com/in/ilton-andrew", href: "https://linkedin.com/in/ilton-andrew" },
+];
+---
+
+<article class="cv">
+  <div class="actions" data-print-hide>
+    <a class="btn btn-primary" href={pdf} download>{t("cv.downloadPdf")}</a>
+    <button class="btn" type="button" onclick="window.print()">{t("cv.print")}</button>
+  </div>
+
+  <header class="cv-head">
+    <h1>Ilton Andrew</h1>
+    <p class="headline">{t("work.companies.mckinsey.role")}</p>
+    <ul class="contacts">
+      {contacts.map((c) => (
+        <li><a href={c.href}>{c.text}</a></li>
+      ))}
+    </ul>
+  </header>
+
+  <p class="summary">{t("cv.summary")}</p>
+
+  <div class="layout">
+    <section class="main-col">
+      <h2>{t("cv.experience")}</h2>
+      <ul class="entries">
+        {companies.map((k) => (
+          <li class="entry">
+            <h3>{t(`work.companies.${k}.role`)}{" "}<span class="co">· {t(`work.companies.${k}.name`)}</span></h3>
+            <p class="meta">{t(`work.companies.${k}.period`)} · {t(`work.companies.${k}.location`)}</p>
+            <p>{t(`work.companies.${k}.description`)}</p>
+            <p class="stack">{t(`work.companies.${k}.stack`)}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <aside class="side-col">
+      <section>
+        <h2>{t("cv.education")}</h2>
+        <ul class="entries">
+          <li class="entry">
+            <h3>{t("cv.educationEntries.poli.school")}</h3>
+            <p>{t("cv.educationEntries.poli.degree")}</p>
+            <p class="meta">{t("cv.educationEntries.poli.period")}</p>
+            <p>{t("cv.educationEntries.poli.description")}</p>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>{t("cv.certifications")}</h2>
+        <ul class="entries">
+          {["gcpAce", "msAmbassador"].map((k) => (
+            <li class="entry">
+              <h3>{t(`cv.certificationEntries.${k}.name`)}</h3>
+              <p class="meta">{t(`cv.certificationEntries.${k}.issuer`)} · {t(`cv.certificationEntries.${k}.date`)}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section>
+        <h2>{t("cv.skills")}</h2>
+        <ul class="entries">
+          {Object.keys(skillLabels).map((k) => (
+            <li class="entry"><strong>{skillLabels[k]}</strong>: {t(`cv.skillGroups.${k}`)}</li>
+          ))}
+        </ul>
+      </section>
+      <section>
+        <h2>{t("cv.languages")}</h2>
+        <ul class="entries">
+          <li>{t("cv.languageEntries.pt")}</li>
+          <li>{t("cv.languageEntries.en")}</li>
+        </ul>
+      </section>
+      <section>
+        <h2>{t("cv.awards")}</h2>
+        <ul class="entries">
+          <li class="entry">{t("cv.awardEntries.visagio")}</li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</article>
+
+<style>
+  .cv { max-width: var(--max-w); margin: 0 auto; padding: 2rem 1rem; }
+  .actions { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  h1 { margin: 0; font-size: 2rem; }
+  .headline { margin: 0.25rem 0 0.5rem; color: var(--fg-muted); font-size: 1.1rem; }
+  .contacts { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; font-size: 0.9rem; }
+  .cv-head { border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+  .summary { margin: 1rem 0 1.5rem; }
+  .layout { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  @media (min-width: 52rem) { .layout { grid-template-columns: 2fr 1fr; } }
+  h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; margin: 0 0 0.75rem; }
+  h3 { font-size: 1rem; margin: 0; }
+  .co { font-weight: 400; color: var(--fg-muted); }
+  .entries { list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; gap: 1rem; }
+  .entry p, .entries li p { margin: 0.2rem 0 0; }
+  .meta { color: var(--fg-muted); font-size: 0.85rem; }
+  .stack { font-size: 0.85rem; font-style: italic; color: var(--fg-muted); }
+
+  @media print {
+    @page { size: A4; margin: 14mm; }
+    :global(:root), :global(:root[data-theme]) { --bg: #fff; --bg-elev: #fff; --fg: #000; --fg-muted: #333; --border: #bbb; --accent: #000; }
+    :global(html), :global(body) { background: #fff; color: #000; font-size: 10pt; line-height: 1.3; }
+    :global(.site-header), :global(.site-footer), :global([data-print-hide]) { display: none !important; }
+    .cv { padding: 0; max-width: none; }
+    h1 { font-size: 20pt; }
+    .layout { grid-template-columns: 2fr 1fr; gap: 1.2rem; }
+    .entries { gap: 0.4rem; margin-bottom: 0.5rem; }
+    .entry, .side-col section { break-inside: avoid; }
+    .summary { margin: 0.6rem 0 0.9rem; }
+    a { color: #000; text-decoration: none; }
+  }
+</style>

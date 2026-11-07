@@ -1,0 +1,54 @@
+---
+import { asLocale, useTranslations } from "../i18n";
+
+const t = useTranslations(asLocale(Astro.currentLocale));
+const links = [
+  { label: "GitHub", href: "https://github.com/iltonandrew" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/ilton-andrew/" },
+  { label: "Instagram", href: "https://www.instagram.com/ilton.andrew/" },
+  { label: "Email", href: "mailto:iltonandrew+contato@gmail.com" },
+];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <img src="/fullname.svg" alt="Ilton Andrew" width="100" height="33" />
+    <ul>
+      {links.map((l) => (
+        <li>
+          <a href={l.href} rel="me noopener" target={l.href.startsWith("http") ? "_blank" : undefined}>{l.label}</a>
+        </li>
+      ))}
+    </ul>
+    <p>{t("footer.madeWith")}</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+    padding-block: 2rem;
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,150 @@
+---
+import { Picture } from "astro:assets";
+import profile from "../../assets/profile.jpg";
+import { asLocale, useTranslations, localePath } from "../../i18n";
+
+const locale = asLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+const img = "/images/companies/";
+const companies = [
+  { id: "mckinsey", logo: "mckinsey.svg" },
+  { id: "mediaHero", logo: "media-hero.svg", logoLight: "media-hero-black.svg" },
+  { id: "xp", logo: "xp.png" },
+  { id: "pipefy", logo: "pipefy.png" },
+  { id: "xpIntern", logo: "xp.png" },
+  { id: "adp", logo: "adp.jpg" },
+  { id: "poliJunior", logo: "poli-junior.png" },
+];
+const projects = [
+  { id: "converter", logo: "converter-gege-codes.svg" },
+  { id: "zoroscopo", logo: "zoroscopo.svg" },
+];
+const cv = locale === "en" ? "Ilton_Andrew-CV-EN.pdf" : "Ilton_Andrew-CV-PT-BR.pdf";
+---
+
+<section id="about" class="hero container">
+  <div class="hero-text">
+    <h1>{t("hero.title")}</h1>
+    <p class="typed">
+      <span class="visually-hidden">{t("hero.typewriter.builder")}</span>
+      <span class="tw tw1" aria-hidden="true" data-text={t("hero.typewriter.engineer")}></span>
+      <span class="tw tw2" aria-hidden="true" data-text={t("hero.typewriter.developer")}></span>
+      <span class="tw tw3" aria-hidden="true" data-text={t("hero.typewriter.builder")}></span>
+    </p>
+    <p class="subtitle">{t("hero.subtitle")}</p>
+    <p class="desc">{t("hero.description")}</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#work">{t("hero.ctaWork")}</a>
+      <a class="btn" href="mailto:iltonandrew+contato@gmail.com">{t("hero.ctaContact")}</a>
+    </div>
+  </div>
+  <Picture
+    class="photo"
+    src={profile}
+    formats={["avif", "webp"]}
+    widths={[320, 480, 720]}
+    sizes="(min-width: 48rem) 360px, 240px"
+    width={480}
+    height={480}
+    loading="eager"
+    fetchpriority="high"
+    alt="Ilton Andrew DJing on a rooftop in São Paulo"
+  />
+</section>
+
+<section id="work" class="container section">
+  <h2>{t("work.title")}</h2>
+  <ul class="cards">
+    {companies.map((c) => (
+      <li class="card reveal">
+        {c.logoLight ? (
+          <>
+            <img class="logo logo-dark" src={img + c.logo} alt="" width="72" height="72" loading="lazy" />
+            <img class="logo logo-light" src={img + c.logoLight} alt="" width="72" height="72" loading="lazy" />
+          </>
+        ) : (
+          <img class="logo" src={img + c.logo} alt="" width="72" height="72" loading="lazy" />
+        )}
+        <div>
+          <h3>{t(`work.companies.${c.id}.name`)}</h3>
+          <p class="role">{t(`work.companies.${c.id}.role`)}</p>
+          <p class="meta">{t(`work.companies.${c.id}.period`)} · {t(`work.companies.${c.id}.location`)}</p>
+          <p>{t(`work.companies.${c.id}.description`)}</p>
+          <p class="stack">{t("work.workedWith")}{" "}{t(`work.companies.${c.id}.stack`)}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section id="projects" class="container section">
+  <h2>{t("work.sideProjects.title")}</h2>
+  <ul class="cards">
+    {projects.map((p) => (
+      <li class="card reveal">
+        <img class="logo" src={img + p.logo} alt="" width="72" height="72" loading="lazy" />
+        <div>
+          <h3><a href={t(`work.sideProjects.${p.id}.link`)} target="_blank" rel="noopener">{t(`work.sideProjects.${p.id}.name`)}</a></h3>
+          <p class="meta">{t("work.sideProjects.personalProject")} · {t(`work.sideProjects.${p.id}.year`)}</p>
+          <p>{t(`work.sideProjects.${p.id}.description`)}</p>
+          <p class="stack">{t(`work.sideProjects.${p.id}.stack`)}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section class="container section cta">
+  <a class="btn btn-primary" href={localePath(locale, "/cv")}>{t("resume.view")}</a>
+  <a class="btn" href={`/resumes/${cv}`} download>{t("resume.download")}</a>
+</section>
+
+<style>
+  .hero { display: grid; gap: 2rem; padding-block: 3rem; align-items: center; }
+  .photo { width: min(240px, 60vw); aspect-ratio: 1; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); order: -1; justify-self: center; }
+  h1 { font-size: clamp(2rem, 6vw, 3.25rem); line-height: 1.1; margin: 0 0 .5rem; }
+  .typed { font-family: var(--font-mono); font-size: 1.25rem; color: var(--accent-2); margin: 0 0 1rem; display: grid; }
+  .tw { grid-area: 1 / 1; white-space: nowrap; width: max-content; max-width: 100%; opacity: 0; clip-path: inset(0 100% 0 0); animation: type 12s steps(24) infinite; }
+  .tw::before { content: attr(data-text); }
+  .tw::after { content: "_"; animation: blink 1s steps(1) infinite; }
+  .tw2 { animation-delay: 4s; }
+  .tw3 { animation-delay: 8s; }
+  @keyframes type {
+    0% { opacity: 1; clip-path: inset(0 100% 0 0); }
+    12% { clip-path: inset(0 0 0 0); }
+    30% { opacity: 1; clip-path: inset(0 0 0 0); }
+    33%, 100% { opacity: 0; clip-path: inset(0 0 0 0); }
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .tw { animation: none; }
+    .tw3 { opacity: 1; clip-path: none; }
+    .tw3::after { animation: none; }
+  }
+  .subtitle { font-weight: 600; margin: 0 0 .75rem; }
+  .desc { color: var(--fg-muted); max-width: 60ch; margin: 0 0 1.5rem; }
+  .actions, .cta { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .section { padding-block: 2.5rem; scroll-margin-top: 4rem; }
+  h2 { font-size: 1.75rem; margin: 0 0 1.5rem; }
+  .cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  .card { display: flex; gap: 1rem; padding: 1.25rem; background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); }
+  .logo { flex: none; width: 72px; height: 72px; object-fit: contain; border-radius: .5rem; }
+  .logo-light { display: none; }
+  :global(:root[data-theme="light"]) .logo-dark { display: none; }
+  :global(:root[data-theme="light"]) .logo-light { display: block; }
+  h3 { font-size: 1.15rem; margin: 0 0 .25rem; }
+  .card p { margin: 0 0 .5rem; }
+  .role { font-weight: 600; }
+  .meta, .stack { color: var(--fg-muted); font-size: .9rem; }
+  .cta { padding-bottom: 4rem; }
+  @media (min-width: 48rem) {
+    .hero { grid-template-columns: 1.4fr 1fr; padding-block: 5rem; }
+    .photo { order: 0; width: min(360px, 100%); }
+    .card { padding: 1.5rem; }
+  }
+  @supports (animation-timeline: view()) {
+    .reveal { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(1.5rem); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .reveal { animation: none; } }
+  }
+</style>
