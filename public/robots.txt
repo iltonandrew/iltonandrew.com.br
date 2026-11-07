@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iltonandrew.com.br/sitemap-index.xml

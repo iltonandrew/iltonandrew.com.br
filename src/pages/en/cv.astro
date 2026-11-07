@@ -1,0 +1,11 @@
+---
+import Base from "../../layouts/Base.astro";
+import Cv from "../../components/cv/Cv.astro";
+import { asLocale, useTranslations } from "../../i18n";
+
+const t = useTranslations(asLocale(Astro.currentLocale));
+---
+
+<Base title={t("cv.pageTitle")} description={t("cv.summary")}>
+  <Cv />
+</Base>

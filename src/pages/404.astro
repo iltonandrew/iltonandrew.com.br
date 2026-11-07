@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+import { useTranslations } from "../i18n";
+
+const blocks = [
+  { t: useTranslations("pt-BR"), lang: "pt-BR", href: "/" },
+  { t: useTranslations("en"), lang: "en", href: "/en" },
+];
+---
+
+<Base title="404" description={blocks[0].t("notFound.description")}>
+  <div class="nf">
+    {blocks.map(({ t, lang, href }) => (
+      <section lang={lang}>
+        <h1>{t("notFound.title")}</h1>
+        <p>{t("notFound.description")}</p>
+        <a class="btn" href={href}>{t("notFound.backHome")}</a>
+      </section>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .nf { max-width: var(--max-w); margin: 0 auto; padding: 4rem 1rem; display: grid; gap: 3rem; }
+  h1 { margin: 0 0 0.5rem; }
+</style>

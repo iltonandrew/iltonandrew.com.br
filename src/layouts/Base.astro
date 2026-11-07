@@ -1,0 +1,67 @@
+---
+import { ClientRouter } from "astro:transitions";
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { asLocale, localePath, stripLocale, locales } from "../i18n";
+
+interface Props {
+  title: string;
+  description: string;
+  /** Absolute or site-relative OG image. Defaults to the profile photo. */
+  image?: string;
+  type?: "website" | "article";
+}
+
+const locale = asLocale(Astro.currentLocale);
+const { title, description, image = "/og.jpg", type = "website" } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const basePath = stripLocale(Astro.url.pathname);
+// The 404 page is a single bilingual file; it has no per-locale alternates.
+const alternates = basePath === "/404" ? [] : locales;
+const ogImage = new URL(image, Astro.site);
+const siteName = "Ilton Andrew";
+const fullTitle = title === siteName ? title : `${title} · ${siteName}`;
+---
+
+<!doctype html>
+<html lang={locale} data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {alternates.map((l) => <link rel="alternate" hreflang={l} href={new URL(localePath(l, basePath), Astro.site)} />)}
+    {alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(basePath, Astro.site)} />}
+    <link rel="alternate" type="application/rss+xml" title={`${siteName} — blog`} href={localePath(locale, "/rss.xml")} />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content={locale.replace("-", "_")} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#1a202c" />
+    <script is:inline>
+      // Apply the saved theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+        } catch (_) {}
+      })();
+    </script>
+    <ClientRouter />
+  </head>
+  <body>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

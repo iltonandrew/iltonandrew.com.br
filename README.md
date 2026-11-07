@@ -1,34 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# iltonandrew.com.br
 
-## Getting Started
+Personal site of Ilton Andrew: home, blog and résumé, in Portuguese and English. Static Astro 7 site deployed on Vercel.
 
-First, run the development server:
+## Commands
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Dev server |
+| `npm run build` | Static build to `dist/` |
+| `npm run preview` | Serve the build |
+| `npm run check` | `astro check` (types + templates) |
+| `npm test` | Node test runner over `tests/` (needs a built `dist/`) |
+| `npm run verify` | Build, then test |
+| `npm run cv:pdf` | Build to a temp dir and regenerate `public/resumes/*.pdf` from the CV pages with headless Chrome |
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Content
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- **Copy**: `src/i18n/pt-BR.json` and `src/i18n/en.json`. Keep both files in sync. Résumé content lives under `cv.*` and `work.*`.
+- **Blog posts**: `src/content/blog/<locale>/<slug>.md` (`pt-BR` or `en`). To add one, create the file with this frontmatter (schema in `src/content.config.ts`):
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+  ```md
+  ---
+  title: "Post title"
+  summary: "One-line summary"
+  date: 2026-01-31
+  tags: [astro]        # optional, default []
+  image: ./cover.jpg   # optional, local image or absolute URL
+  draft: false         # optional, default false
+  ---
+  ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- **PDFs**: after changing résumé copy or the CV styles, run `npm run cv:pdf` and commit the updated PDFs.
 
-## Learn More
+## Locales and URLs
 
-To learn more about Next.js, take a look at the following resources:
+pt-BR is the default and unprefixed; English is prefixed with `/en`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Page | pt-BR | en |
+| --- | --- | --- |
+| Home | `/` | `/en` |
+| Blog | `/blog` | `/en/blog` |
+| CV | `/cv` | `/en/cv` |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+There is a single bilingual `404.html`.
